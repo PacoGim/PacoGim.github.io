@@ -1,6 +1,9 @@
 <script lang="ts">
+	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
+	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
-	import { homeSectionFontWeight, windowScrollValueStore } from '../store'
+	import scrollToElementFn from '../functions/scrollToElement.fn'
+	import { homeSectionFontWeight, windowScrollStoppedStore, windowScrollValueStore } from '../store'
 
 	let selfElement: HTMLElement = undefined
 
@@ -8,9 +11,15 @@
 		$windowScrollValueStore
 		$homeSectionFontWeight = calculateFontWeightFn(selfElement)
 	}
+
+	$: if ($windowScrollStoppedStore === true) {
+		if ($homeSectionFontWeight <= fontWeightMaxTreshold && $homeSectionFontWeight >= fontWeightMinTresholdConst) {
+			scrollToElementFn('#home-section')
+		}
+	}
 </script>
 
-<section-svlt id="home-section" bind:this={selfElement}> Hello! This is a section of the portfolio! </section-svlt>
+<section-svlt id="home-section" bind:this={selfElement} />
 
 <style>
 	section-svlt {

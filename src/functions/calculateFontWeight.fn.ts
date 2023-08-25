@@ -7,7 +7,7 @@ export default function (element: HTMLElement): number {
 	const fontSizeMin = 400
 	const fontSizeMax = 700
 
-	const fontSize = fontSizeMax + (fontSizeMin - fontSizeMax) * absoluteValue
+	const fontSize = Math.trunc(fontSizeMax + (fontSizeMin - fontSizeMax) * absoluteValue)
 
 	return fontSize
 }
