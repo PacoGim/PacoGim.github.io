@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
-	import { projectsSectionFontWeight, windowScrollValueStore } from '../store'
+	import { projectsSectionFontWeight, skillsSectionFontWeight, windowScrollValueStore } from '../store'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
 
 	let selfElement: HTMLElement = undefined
 
 	$: if (selfElement) {
 		$windowScrollValueStore
-		$projectsSectionFontWeight = calculateFontWeightFn(selfElement)
+		$skillsSectionFontWeight = calculateFontWeightFn(selfElement)
 	}
 </script>
 
-<section-svlt id="projects-section" bind:this={selfElement}> Hello! This is a section of the portfolio! </section-svlt>
+<section-svlt id="skills-section" bind:this={selfElement}> Hello! This is a section of the portfolio! </section-svlt>
 
 <style>
 	section-svlt {
