@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: hsl(0, 0%, 5%);
+	color: hsl(0, 0%, 95%);
+	font-family: Gabarito;
+	font-variation-settings: 'wght' 400;
+}
