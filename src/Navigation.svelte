@@ -1,48 +1,62 @@
 <script lang="ts">
+	import getTranslationsFn from './functions/getTranslations.fn'
 	import scrollToElementFn from './functions/scrollToElement.fn'
 	import {
 		aboutSectionFontWeight,
 		bioSectionFontWeight,
 		homeSectionFontWeight,
+		jahminSectionFontWeight,
 		langStore,
 		projectsSectionFontWeight,
 		skillsSectionFontWeight
 	} from './store'
+
+	function scrollToSection(sectionId: string) {
+		console.log(sectionId)
+		scrollToElementFn(`#${sectionId}`)
+	}
 </script>
 
 <navigation-svlt>
 	<button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$homeSectionFontWeight};"
-		on:click={() => scrollToElementFn('#home-section')}
+		on:click={() => scrollToSection('home-section')}
 	>
-		Home
+		{getTranslationsFn('Home', $langStore)}
 	</button>
 	<button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$projectsSectionFontWeight};"
-		on:click={() => scrollToElementFn('#projects-section')}
+		on:click={() => scrollToSection('projects-section')}
 	>
-		Projects
+		{getTranslationsFn('Projects', $langStore)}
+	</button>
+	<button
+		class="nostyle"
+		style="font-variation-settings: 'wght' {$jahminSectionFontWeight};"
+		on:click={() => scrollToSection('jahmin-section')}
+	>
+		Jahmin
 	</button>
 	<button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$bioSectionFontWeight};"
-		on:click={() => scrollToElementFn('#bio-section')}>Bio</button
+		on:click={() => scrollToSection('bio-section')}>Bio</button
 	>
 	<button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$skillsSectionFontWeight};"
-		on:click={() => scrollToElementFn('#skills-section')}
+		on:click={() => scrollToSection('skills-section')}
 	>
-		Skills
+		{getTranslationsFn('Skills', $langStore)}
 	</button>
 	<button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$aboutSectionFontWeight};"
-		on:click={() => scrollToElementFn('#about-section')}
+		on:click={() => scrollToSection('about-section')}
 	>
-		About
+		{getTranslationsFn('About', $langStore)}
 	</button>
 
 	<separator />
@@ -73,6 +87,7 @@
 		background-color: #fff;
 		width: 100%;
 		height: 2px;
+		margin: 0.5rem 0;
 	}
 
 	button.langButton {

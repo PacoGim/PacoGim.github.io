@@ -7,6 +7,7 @@
 	import Bio from './sections/Bio.svelte'
 	import Skills from './sections/Skills.svelte'
 	import About from './sections/About.svelte'
+	import Jahmin from './sections/Jahmin.svelte'
 
 	let windowScrollDebounce = undefined
 
@@ -29,6 +30,7 @@
 <main>
 	<Home />
 	<Projects />
+	<Jahmin />
 	<Bio />
 	<Skills />
 	<About />
@@ -38,6 +40,7 @@
 	:global(section-svlt) {
 		display: flex;
 		height: 100vh;
+		padding-left: 200px;
 	}
 
 	:global(section-svlt):nth-child(odd) {
@@ -45,6 +48,6 @@
 	}
 
 	:global(section-svlt):nth-child(even) {
-		background-color: hsl(195, 100%, 40%);
+		background-color: hsl(195, 100%, 45%);
 	}
 </style>

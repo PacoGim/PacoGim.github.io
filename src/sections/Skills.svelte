@@ -22,7 +22,5 @@
 <section-svlt id="skills-section" bind:this={selfElement}> Hello! This is a section of the portfolio! </section-svlt>
 
 <style>
-	section-svlt {
 
-	}
 </style>

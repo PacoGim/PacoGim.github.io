@@ -8,6 +8,7 @@ export let homeSectionFontWeight: Writable<number> = writable(400)
 export let bioSectionFontWeight: Writable<number> = writable(400)
 export let skillsSectionFontWeight: Writable<number> = writable(400)
 export let aboutSectionFontWeight: Writable<number> = writable(400)
+export let jahminSectionFontWeight: Writable<number> = writable(400)
 
 export let langStore: Writable<'en' | 'fr'> = writable((localStorage.getItem('lang') as 'en' | 'fr') || 'en')
 
