@@ -39,4 +39,12 @@
 		display: flex;
 		height: 100vh;
 	}
+
+	:global(section-svlt):nth-child(odd) {
+		background-color: hsl(195, 100%, 50%);
+	}
+
+	:global(section-svlt):nth-child(even) {
+		background-color: hsl(195, 100%, 40%);
+	}
 </style>

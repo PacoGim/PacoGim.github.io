@@ -23,6 +23,6 @@
 
 <style>
 	section-svlt {
-		background-color: deepskyblue;
+
 	}
 </style>

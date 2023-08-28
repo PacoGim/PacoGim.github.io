@@ -2,10 +2,9 @@
 	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
 	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
+	import getTranslationsFn from '../functions/getTranslations.fn'
 	import scrollToElementFn from '../functions/scrollToElement.fn'
-	import { homeSectionFontWeight, windowScrollStoppedStore, windowScrollValueStore } from '../store'
-
-	let selfElement: HTMLElement = undefined
+	import { homeSectionFontWeight, langStore, windowScrollStoppedStore, windowScrollValueStore } from '../store'
 
 	$: if (selfElement) {
 		$windowScrollValueStore
@@ -17,12 +16,34 @@
 			scrollToElementFn('#home-section')
 		}
 	}
+
+	let selfElement: HTMLElement = undefined
 </script>
 
-<section-svlt id="home-section" bind:this={selfElement} />
+<section-svlt id="home-section" bind:this={selfElement}>
+	<p class="name">Paco Gimeno</p>
+	<separator />
+	<p>{getTranslationsFn('Software Engineer', $langStore)}</p>
+</section-svlt>
 
 <style>
 	section-svlt {
-		background-color: rgb(93, 29, 29);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		font-size: 3rem;
+	}
+
+	p.name {
+		font-variation-settings: 'wght' 600;
+	}
+
+	separator {
+		display: block;
+		background-color: #fff;
+		height: 2px;
+		width: 50%;
 	}
 </style>

@@ -4,6 +4,7 @@
 		aboutSectionFontWeight,
 		bioSectionFontWeight,
 		homeSectionFontWeight,
+		langStore,
 		projectsSectionFontWeight,
 		skillsSectionFontWeight
 	} from './store'
@@ -43,6 +44,16 @@
 	>
 		About
 	</button>
+
+	<separator />
+
+	<button class="nostyle langButton" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>
+		English
+	</button>
+
+	<button class="nostyle langButton" class:selected={$langStore === 'fr'} on:click={() => ($langStore = 'fr')}>
+		Français
+	</button>
 </navigation-svlt>
 
 <style>
@@ -50,8 +61,27 @@
 		display: flex;
 		flex-direction: column;
 		position: fixed;
+		justify-content: center;
+		align-items: center;
 		top: 1rem;
 		left: 1rem;
 		font-size: 1.75rem;
+	}
+
+	separator {
+		display: block;
+		background-color: #fff;
+		width: 100%;
+		height: 2px;
+	}
+
+	button.langButton {
+		font-size: 1rem;
+
+		transition: font-variation-settings 300ms ease-in-out;
+	}
+
+	button.langButton.selected {
+		font-variation-settings: 'wght' 600;
 	}
 </style>

@@ -24,6 +24,6 @@
 
 <style>
 	section-svlt {
-		background-color: rgb(39, 39, 111);
+
 	}
 </style>

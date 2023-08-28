@@ -5,8 +5,9 @@
 }
 
 body {
-	background-color: hsl(0, 0%, 5%);
-	color: hsl(0, 0%, 95%);
+	/* background-color: hsl(0, 0%, 5%); */
+	/* color: hsl(0, 0%, 95%); */
+	color: #fff;
 	font-family: Gabarito;
 	font-variation-settings: 'wght' 400;
 }
