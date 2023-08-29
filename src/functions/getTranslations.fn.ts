@@ -1,6 +1,6 @@
 const full = {
-	'Software Engineer': {
-		fr: 'Ingénieur Logiciel'
+	'Full Stack Engineer': {
+		fr: 'Développeur Full Stack'
 	},
 	Home: {
 		fr: 'Acceuil'
@@ -11,11 +11,11 @@ const full = {
 	Skills: {
 		fr: 'Compétences'
 	},
-	About: {
-		fr: 'À Propos'
+	Experience: {
+		fr: 'Expérience'
 	},
-	'How do I work?': {
-		fr: 'Comment je travail?'
+	'Education': {
+		fr: 'Éducation'
 	}
 }
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { aboutSectionFontWeight, projectsSectionFontWeight, windowScrollStoppedStore, windowScrollValueStore } from '../store'
+	import { educationSectionFontWeight, windowScrollStoppedStore, windowScrollValueStore } from '../store'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
 	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
 	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
@@ -9,21 +9,21 @@
 
 	$: if (selfElement) {
 		$windowScrollValueStore
-		$aboutSectionFontWeight = calculateFontWeightFn(selfElement)
+		$educationSectionFontWeight = calculateFontWeightFn(selfElement)
 	}
 
 	$: if ($windowScrollStoppedStore === true) {
-		if ($aboutSectionFontWeight <= fontWeightMaxTreshold && $aboutSectionFontWeight >= fontWeightMinTresholdConst) {
-			scrollToElementFn('#about-section')
+		if ($educationSectionFontWeight <= fontWeightMaxTreshold && $educationSectionFontWeight >= fontWeightMinTresholdConst) {
+			scrollToElementFn('#education-section')
 		}
 	}
 </script>
 
-<section-svlt id="about-section" bind:this={selfElement}> Hello! This is a section of the portfolio! </section-svlt>
+<section-svlt id="education-section" bind:this={selfElement}>
+	<h1>Education</h1>
+</section-svlt>
 
 <style>
 	section-svlt {
-
-
 	}
 </style>

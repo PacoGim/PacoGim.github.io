@@ -2,12 +2,13 @@
 	import getTranslationsFn from './functions/getTranslations.fn'
 	import scrollToElementFn from './functions/scrollToElement.fn'
 	import {
-		aboutSectionFontWeight,
 		bioSectionFontWeight,
 		homeSectionFontWeight,
 		jahminSectionFontWeight,
 		langStore,
-		howSectionFontWeight
+		educationSectionFontWeight,
+		skillsSectionFontWeight,
+		experienceSectionFontWeight
 	} from './store'
 
 	function scrollToSection(sectionId: string) {
@@ -23,40 +24,40 @@
 	>
 		{getTranslationsFn('Home', $langStore)}
 	</button>
-	<!-- <button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$projectsSectionFontWeight};"
-		on:click={() => scrollToSection('projects-section')}
-	>
-		{getTranslationsFn('Projects', $langStore)}
-	</button> -->
-	<button
-	class="nostyle"
-	style="font-variation-settings: 'wght' {$jahminSectionFontWeight};"
-	on:click={() => scrollToSection('jahmin-section')}
-	>
-	{getTranslationsFn('Project', $langStore)}
-	<br>
-	Jahmin
-	</button>
 	<button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$bioSectionFontWeight};"
-		on:click={() => scrollToSection('bio-section')}>Bio</button
+		on:click={() => scrollToSection('bio-section')}
 	>
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$howSectionFontWeight};"
-		on:click={() => scrollToSection('how-section')}
-	>
-		{getTranslationsFn('How do I work?', $langStore)}
+		{getTranslationsFn('Bio', $langStore)}
 	</button>
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$aboutSectionFontWeight};"
-		on:click={() => scrollToSection('about-section')}
+		style="font-variation-settings: 'wght' {$jahminSectionFontWeight};"
+		on:click={() => scrollToSection('jahmin-section')}
 	>
-		{getTranslationsFn('About', $langStore)}
+		{getTranslationsFn('Project', $langStore)}
+		<br />
+		Jahmin
+	</button>
+	<button
+		class="nostyle"
+		style="font-variation-settings: 'wght' {$skillsSectionFontWeight};"
+		on:click={() => scrollToSection('skills-section')}>{getTranslationsFn('Skills', $langStore)}</button
+	>
+	<button
+		class="nostyle"
+		style="font-variation-settings: 'wght' {$experienceSectionFontWeight};"
+		on:click={() => scrollToSection('experience-section')}
+	>
+		{getTranslationsFn('Experience', $langStore)}
+	</button>
+	<button
+		class="nostyle"
+		style="font-variation-settings: 'wght' {$educationSectionFontWeight};"
+		on:click={() => scrollToSection('education-section')}
+	>
+		{getTranslationsFn('Education', $langStore)}
 	</button>
 
 	<separator />
@@ -80,6 +81,7 @@
 		top: 1rem;
 		left: 1rem;
 		font-size: 1.75rem;
+		width: 200px;
 	}
 
 	separator {
@@ -90,6 +92,10 @@
 		margin: 0.5rem 0;
 	}
 
+	button{
+		margin-bottom: 0.5rem;
+	}
+
 	button.langButton {
 		font-size: 1rem;
 
@@ -97,6 +103,6 @@
 	}
 
 	button.langButton.selected {
-		font-variation-settings: 'wght' 600;
+		font-variation-settings: 'wght' 800;
 	}
 </style>

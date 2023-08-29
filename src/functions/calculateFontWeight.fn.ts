@@ -4,8 +4,8 @@ export default function (element: HTMLElement): number {
 
 	let absoluteValue = Math.abs(elementScroll / elementHeight)
 
-	const fontSizeMin = 400
-	const fontSizeMax = 700
+	const fontSizeMin = 100
+	const fontSizeMax = 800
 
 	const fontSize = Math.trunc(fontSizeMax + (fontSizeMin - fontSizeMax) * absoluteValue)
 

@@ -38,7 +38,7 @@
 	// 		}
 	// 	)
 
-	// 	elementObserver.observe(selfElement.querySelector('#home-section p.who'))
+	// 	elementObserver.observe(selfElement.querySelector('#home-section h1.who'))
 	// }
 
 	// $: console.log(isVisible)
@@ -54,9 +54,10 @@
 	</section-header>
 
 	<section-body>
-		<p class="who">Paco Gimeno</p>
+		<h1 class="who">Paco Gimeno</h1>
 		<separator />
-		<p class="what">{getTranslationsFn('Software Engineer', $langStore)}</p>
+		<h1 class="what">{getTranslationsFn('Full Stack Engineer', $langStore)}</h1>
+		<p>I make ideas become a reality <br/> From start to shipping</p>
 	</section-body>
 </section-svlt>
 
@@ -64,11 +65,10 @@
 	section-svlt {
 		display: flex;
 		flex-direction: column;
-		font-size: 3rem;
 
 		text-align: center;
 
-		background: linear-gradient(135deg, rgba(0,61,255,1) 0%, rgba(0,130,255,1) 50%, rgba(0,191,255,1) 100%);
+		background: linear-gradient(135deg, rgba(0, 61, 255, 1) 0%, rgba(0, 130, 255, 1) 50%, rgba(0, 191, 255, 1) 100%);
 	}
 
 	section-header {
@@ -87,10 +87,17 @@
 		padding: 5rem;
 	}
 
-	#home-section p,
+	#home-section h1,
 	#home-section separator {
 		transition-property: transform, opacity;
 		transition-duration: 2000ms;
+		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	#home-section p {
+		transition-property: transform, opacity;
+		transition-duration: 1500ms;
+		transition-delay: 500ms;
 		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	}
 
@@ -117,30 +124,45 @@
 		border-radius: 100vmax;
 	}
 
+	p {
+		margin-top: 1rem;
+		transform: translateY(200px);
+		opacity: 0;
+	}
+
+	#home-section.isVisible p {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+
 	#home-section.isVisible img-container {
 		box-shadow: 0 0 500px 0px #fff;
 		transform: translateY(0px);
 		opacity: 1;
 	}
 
-	p.who {
+	h1 {
+		font-size: 3rem;
+	}
+
+	h1.who {
 		font-variation-settings: 'wght' 600;
 		transform: translateY(-200px);
 		opacity: 0;
 	}
 
-	#home-section.isVisible p.who {
-		transform: translateY(-25px);
+	#home-section.isVisible h1.who {
+		transform: translateY(0px);
 		opacity: 1;
 	}
 
-	p.what {
+	h1.what {
 		transform: translateY(200px);
 		opacity: 0;
 	}
 
-	#home-section.isVisible p.what {
-		transform: translateY(25px);
+	#home-section.isVisible h1.what {
+		transform: translateY(0px);
 		opacity: 1;
 	}
 
@@ -152,6 +174,7 @@
 
 		border-radius: 100vmax;
 
+		margin: 1rem 0;
 		transform: scale(0);
 		opacity: 0;
 	}

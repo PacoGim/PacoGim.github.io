@@ -2,12 +2,12 @@
 	import { onMount } from 'svelte'
 	import Navigation from './Navigation.svelte'
 	import Home from './sections/Home.svelte'
-	import Projects from './sections/Projects.svelte'
 	import { windowScrollStoppedStore, windowScrollValueStore } from './store'
-	import Bio from './sections/Bio.svelte'
-	import About from './sections/About.svelte'
 	import Jahmin from './sections/Jahmin.svelte'
-	import How from './sections/How.svelte'
+	import Skills from './sections/Skills.svelte'
+	import Experience from './sections/Experience.svelte'
+	import Education from './sections/Education.svelte'
+	import Bio from './sections/Bio.svelte'
 
 	let windowScrollDebounce = undefined
 
@@ -25,22 +25,21 @@
 	})
 </script>
 
-<Navigation />
-
 <main>
+	<Navigation />
 	<Home />
-	<Projects />
-	<Jahmin />
 	<Bio />
-	<How />
-	<About />
+	<Jahmin />
+	<Skills />
+	<Experience />
+	<Education />
 </main>
 
 <style>
 	:global(section-svlt) {
 		display: flex;
 		height: 100vh;
-		padding-left: 200px;
+		padding-left: 216px;
 	}
 
 	:global(section-svlt):nth-child(odd) {
