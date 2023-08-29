@@ -27,6 +27,7 @@
 </section-svlt>
 
 <style>
-	section-svlt {
-	}
+	/* section-svlt {
+		background: linear-gradient(45deg, rgba(0,61,255,1) 0%, rgba(0,130,255,1) 50%, rgba(0,191,255,1) 100%);
+	} */
 </style>

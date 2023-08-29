@@ -5,14 +5,17 @@ const full = {
 	Home: {
 		fr: 'Acceuil'
 	},
-	Projects: {
-		fr: 'Projets'
+	Project: {
+		fr: 'Projet'
 	},
 	Skills: {
 		fr: 'Compétences'
 	},
 	About: {
 		fr: 'À Propos'
+	},
+	'How do I work?': {
+		fr: 'Comment je travail?'
 	}
 }
 

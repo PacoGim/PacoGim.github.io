@@ -6,7 +6,7 @@ export let windowScrollStoppedStore: Writable<boolean> = writable(true)
 export let projectsSectionFontWeight: Writable<number> = writable(400)
 export let homeSectionFontWeight: Writable<number> = writable(400)
 export let bioSectionFontWeight: Writable<number> = writable(400)
-export let skillsSectionFontWeight: Writable<number> = writable(400)
+export let howSectionFontWeight: Writable<number> = writable(400)
 export let aboutSectionFontWeight: Writable<number> = writable(400)
 export let jahminSectionFontWeight: Writable<number> = writable(400)
 

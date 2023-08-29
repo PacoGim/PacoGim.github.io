@@ -67,6 +67,8 @@
 		font-size: 3rem;
 
 		text-align: center;
+
+		background: linear-gradient(135deg, rgba(0,61,255,1) 0%, rgba(0,130,255,1) 50%, rgba(0,191,255,1) 100%);
 	}
 
 	section-header {

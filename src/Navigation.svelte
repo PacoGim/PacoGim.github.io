@@ -7,12 +7,10 @@
 		homeSectionFontWeight,
 		jahminSectionFontWeight,
 		langStore,
-		projectsSectionFontWeight,
-		skillsSectionFontWeight
+		howSectionFontWeight
 	} from './store'
 
 	function scrollToSection(sectionId: string) {
-		console.log(sectionId)
 		scrollToElementFn(`#${sectionId}`)
 	}
 </script>
@@ -25,19 +23,21 @@
 	>
 		{getTranslationsFn('Home', $langStore)}
 	</button>
-	<button
+	<!-- <button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$projectsSectionFontWeight};"
 		on:click={() => scrollToSection('projects-section')}
 	>
 		{getTranslationsFn('Projects', $langStore)}
-	</button>
+	</button> -->
 	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$jahminSectionFontWeight};"
-		on:click={() => scrollToSection('jahmin-section')}
+	class="nostyle"
+	style="font-variation-settings: 'wght' {$jahminSectionFontWeight};"
+	on:click={() => scrollToSection('jahmin-section')}
 	>
-		Jahmin
+	{getTranslationsFn('Project', $langStore)}
+	<br>
+	Jahmin
 	</button>
 	<button
 		class="nostyle"
@@ -46,10 +46,10 @@
 	>
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$skillsSectionFontWeight};"
-		on:click={() => scrollToSection('skills-section')}
+		style="font-variation-settings: 'wght' {$howSectionFontWeight};"
+		on:click={() => scrollToSection('how-section')}
 	>
-		{getTranslationsFn('Skills', $langStore)}
+		{getTranslationsFn('How do I work?', $langStore)}
 	</button>
 	<button
 		class="nostyle"

@@ -5,9 +5,9 @@
 	import Projects from './sections/Projects.svelte'
 	import { windowScrollStoppedStore, windowScrollValueStore } from './store'
 	import Bio from './sections/Bio.svelte'
-	import Skills from './sections/Skills.svelte'
 	import About from './sections/About.svelte'
 	import Jahmin from './sections/Jahmin.svelte'
+	import How from './sections/How.svelte'
 
 	let windowScrollDebounce = undefined
 
@@ -32,7 +32,7 @@
 	<Projects />
 	<Jahmin />
 	<Bio />
-	<Skills />
+	<How />
 	<About />
 </main>
 
@@ -44,10 +44,10 @@
 	}
 
 	:global(section-svlt):nth-child(odd) {
-		background-color: hsl(195, 100%, 50%);
+		background-color: hsl(0, 0%, 20%);
 	}
 
 	:global(section-svlt):nth-child(even) {
-		background-color: hsl(195, 100%, 45%);
+		background-color: hsl(0, 0%, 10%);
 	}
 </style>
