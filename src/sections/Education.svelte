@@ -2,7 +2,7 @@
 	import { educationSectionFontWeight, windowScrollStoppedStore, windowScrollValueStore } from '../store'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
 	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
-	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
+	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold.const'
 	import scrollToElementFn from '../functions/scrollToElement.fn'
 
 	let selfElement: HTMLElement = undefined

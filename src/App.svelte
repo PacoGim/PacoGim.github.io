@@ -8,6 +8,7 @@
 	import Experience from './sections/Experience.svelte'
 	import Education from './sections/Education.svelte'
 	import Bio from './sections/Bio.svelte'
+	import Projects from './sections/Projects.svelte'
 
 	let windowScrollDebounce = undefined
 
@@ -29,6 +30,7 @@
 	<Navigation />
 	<Home />
 	<Bio />
+	<Projects />
 	<Jahmin />
 	<Skills />
 	<Experience />

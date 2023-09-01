@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { jahminSectionFontWeight, windowScrollStoppedStore, windowScrollValueStore } from '../store'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
-	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
+	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold.const'
 	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
 	import scrollToElementFn from '../functions/scrollToElement.fn'
 
@@ -21,7 +21,7 @@
 
 <section-svlt id="jahmin-section" bind:this={selfElement}>
 	<section-header>
-		<img-container><img src="./img/jahmin-logo.svg" alt="" /></img-container>
+		<img-container><img src="./img/jahmin_logo.svg" alt="" /></img-container>
 
 		<a href="https://github.com/PacoGim/Jahmin" target="_blank">
 			<h1>Jahmin</h1>

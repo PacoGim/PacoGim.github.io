@@ -8,7 +8,8 @@
 		langStore,
 		educationSectionFontWeight,
 		skillsSectionFontWeight,
-		experienceSectionFontWeight
+		experienceSectionFontWeight,
+		projectsSectionFontWeight
 	} from './store'
 
 	function scrollToSection(sectionId: string) {
@@ -31,13 +32,20 @@
 	>
 		{getTranslationsFn('Bio', $langStore)}
 	</button>
+
+	<button
+		class="nostyle"
+		style="font-variation-settings: 'wght' {$projectsSectionFontWeight};"
+		on:click={() => scrollToSection('projects-section')}
+	>
+		{getTranslationsFn('Projects', $langStore)}
+	</button>
+
 	<button
 		class="nostyle"
 		style="font-variation-settings: 'wght' {$jahminSectionFontWeight};"
 		on:click={() => scrollToSection('jahmin-section')}
 	>
-		{getTranslationsFn('Project', $langStore)}
-		<br />
 		Jahmin
 	</button>
 	<button
@@ -92,7 +100,7 @@
 		margin: 0.5rem 0;
 	}
 
-	button{
+	button {
 		margin-bottom: 0.5rem;
 	}
 

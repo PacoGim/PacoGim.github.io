@@ -9,6 +9,7 @@ export let experienceSectionFontWeight: Writable<number> = writable(400)
 export let educationSectionFontWeight: Writable<number> = writable(400)
 export let bioSectionFontWeight: Writable<number> = writable(400)
 export let jahminSectionFontWeight: Writable<number> = writable(400)
+export let projectsSectionFontWeight: Writable<number> = writable(400)
 
 export let langStore: Writable<'en' | 'fr'> = writable((localStorage.getItem('lang') as 'en' | 'fr') || 'en')
 

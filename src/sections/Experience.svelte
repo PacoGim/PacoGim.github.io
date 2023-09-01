@@ -1,5 +1,5 @@
 <script lang="ts">
-	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
+	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold.const'
 	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
 	import scrollToElementFn from '../functions/scrollToElement.fn'

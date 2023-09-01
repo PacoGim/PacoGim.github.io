@@ -5,8 +5,8 @@ const full = {
 	Home: {
 		fr: 'Acceuil'
 	},
-	Project: {
-		fr: 'Projet'
+	Projects: {
+		fr: 'Projets'
 	},
 	Skills: {
 		fr: 'Compétences'
@@ -16,6 +16,9 @@ const full = {
 	},
 	'Education': {
 		fr: 'Éducation'
+	},
+	'Bio': {
+		fr: 'Bio'
 	}
 }
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { skillsSectionFontWeight, windowScrollStoppedStore, windowScrollValueStore } from '../store'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
-	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
+	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold.const'
 	import scrollToElementFn from '../functions/scrollToElement.fn'
 	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
 

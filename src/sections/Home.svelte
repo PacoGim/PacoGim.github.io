@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
-	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold'
+	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold.const'
 	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
 	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
 	import getTranslationsFn from '../functions/getTranslations.fn'
@@ -57,7 +57,7 @@
 		<h1 class="who">Paco Gimeno</h1>
 		<separator />
 		<h1 class="what">{getTranslationsFn('Full Stack Engineer', $langStore)}</h1>
-		<p>I make ideas become a reality <br/> From start to shipping</p>
+		<p>I make ideas become a reality <br/> from start to deployement</p>
 	</section-body>
 </section-svlt>
 
