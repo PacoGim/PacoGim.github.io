@@ -20,10 +20,19 @@
 </script>
 
 <section-svlt id="experience-section" bind:this={selfElement}>
-	<h1>Experience</h1>
+	<p></p>
 </section-svlt>
 
 <style>
 	section-svlt {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.25rem;
+	}
+
+	section-svlt p {
+		margin-bottom: 1rem;
 	}
 </style>

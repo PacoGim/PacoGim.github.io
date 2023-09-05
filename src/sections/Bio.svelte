@@ -28,30 +28,50 @@
 </script>
 
 <section-svlt id="bio-section" bind:this={selfElement}>
+	<h1>Hello!,</h1>
+	<h3>I’m pleased to see that I may have peaked your interest and for that I’m already glad.</h3>
 	<p>
-		Hello!, my name is Paco Gimeno and I'm a software engineer with {calculateYears()} years of experience.
-		<br />
-		<br />
-		I'm passionate about creating innovative solutions to complex problems and enjoy working collaboratively with others.
-		<br />
-		<br />
-		My technical skills include proficiency in Javascript/Typescript and Svelte.
-		<br />
-		<br />
-		I'm also a strong communicator and enjoy helping others learn and grow.
+		Born in France in 1992, I quickly learned to use computers. High School bored me to death so I finished all the mandatory
+		studies, moved to Spain then jumped right away in Programming studies.
 	</p>
+	<p>I managed to surpass my expectations and ended up with the best grades while also helping my other classmates.</p>
+	<p>
+		For my last year of schooling, I managed to get a place at the multinational INDRA as an intern but more about that in the
+		Experience section.
+	</p>
+	<p>Now I'm a full stack engineer with {calculateYears()} years of experience and I’m back in France looking for a job.</p>
+	<p>I’m cheerful, kindhearted, lifelong learner, perfectionist and magnanimous.</p>
 </section-svlt>
 
 <style>
 	section-svlt {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 	}
 
+	section-svlt > * {
+		max-width: 600px;
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		width: 100%;
+		text-align: left;
+		font-size: 2.5rem;
+		font-variation-settings: 'wght' 600;
+		margin-bottom: 0;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		font-variation-settings: 'wght' 500;
+	}
+
 	p {
-		max-width: 400px;
+		font-size: 1.25rem;
 	}
 
 	:global(html[screen-size='small'] p) {
