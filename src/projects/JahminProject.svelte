@@ -1,12 +1,4 @@
-<script lang="ts">
-	import { windowScrollStoppedStore, windowScrollValueStore } from '../store'
-	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
-	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold.const'
-	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
-	import scrollToElementFn from '../functions/scrollToElement.fn'
-</script>
-
-<section-svlt id="jahmin-section">
+<jahmin-project>
 	<section-header>
 		<img-container><img src="./img/jahmin_logo.svg" alt="" /></img-container>
 
@@ -24,7 +16,6 @@
 		ElectronJS and Svelte, capable of handling thousands of songs while the app is being used thanks to the use of Web Workers.
 	</p>
 
-	<p>A massive codebase that can handle:</p>
 	<ul>
 		<li>Song metadata updating</li>
 		<li>Lyrics</li>
@@ -37,13 +28,13 @@
 		<li>Animated album arts</li>
 		<li>And much, much more</li>
 	</ul>
-</section-svlt>
+</jahmin-project>
 
 <style>
-	section-svlt {
+	jahmin-project {
 		display: flex;
 		flex-direction: column;
-		padding-top: 5rem;
+		padding: 2rem;
 		align-items: center;
 	}
 
@@ -55,11 +46,12 @@
 
 	img-container {
 		display: block;
-		width: 200px;
-		height: 200px;
+		width: 150px;
+		height: 150px;
 		border-radius: 100vmax;
 		border: 5px solid #fff;
 
+		background-color: rgba(255, 255, 255, 0.1);
 		box-shadow: 0 0 0px 0px #fff;
 	}
 
@@ -71,11 +63,11 @@
 	}
 
 	p {
-		max-width: 600px;
 		padding: 1rem;
 	}
 
 	a {
+		margin-top: 1rem;
 		display: flex;
 		color: #fff;
 		text-decoration: none;
@@ -84,5 +76,9 @@
 
 	a svg {
 		margin-left: 0.5rem;
+	}
+
+	ul li {
+		text-align: left;
 	}
 </style>

@@ -50,14 +50,14 @@
 
 <section-svlt id="home-section" class:isVisible bind:this={selfElement}>
 	<section-header>
-		<img-container><img src="https://placehold.co/400x400/png" alt="" /></img-container>
+		<img-container><img src="img/my_face.jpg" alt="" /></img-container>
 	</section-header>
 
 	<section-body>
 		<h1 class="who">Paco Gimeno</h1>
 		<separator />
 		<h1 class="what">{getTranslationsFn('Full Stack Engineer', $langStore)}</h1>
-		<p>I make ideas become a reality <br/> from start to deployement</p>
+		<p>I make ideas become a reality <br /> from start to deployement</p>
 	</section-body>
 </section-svlt>
 
@@ -68,7 +68,8 @@
 
 		text-align: center;
 
-		background: linear-gradient(135deg, rgba(0, 61, 255, 1) 0%, rgba(0, 130, 255, 1) 50%, rgba(0, 191, 255, 1) 100%);
+
+		/* background: linear-gradient(135deg, rgba(0, 61, 255, 1) 0%, rgba(0, 130, 255, 1) 50%, rgba(0, 191, 255, 1) 100%); */
 	}
 
 	section-header {
@@ -109,12 +110,12 @@
 		border: 5px solid #fff;
 		background-color: #fff;
 
-		box-shadow: 0 0 0px 0px #fff;
+		box-shadow: 0 0 0px 0px #1a1a1a;
 
 		transform: rotateX(90deg);
 		transition-property: transform, opacity, box-shadow;
 		transition-delay: 1000ms;
-		transition-duration: 1000ms, 1000ms, 10000ms;
+		transition-duration: 1000ms, 1000ms, 5000ms;
 		transition-timing-function: ease-in-out;
 	}
 
@@ -122,6 +123,7 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 100vmax;
+		object-fit: cover;
 	}
 
 	p {
@@ -136,7 +138,7 @@
 	}
 
 	#home-section.isVisible img-container {
-		box-shadow: 0 0 500px 0px #fff;
+		box-shadow: 0 0 500px 0px #b1b1b1;
 		transform: translateY(0px);
 		opacity: 1;
 	}

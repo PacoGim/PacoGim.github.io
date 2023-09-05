@@ -17,13 +17,28 @@
 			scrollToElementFn('#bio-section')
 		}
 	}
+
+	function calculateYears() {
+		const dateNow = new Date()
+		const dateDegree = new Date(2017, 6, 29)
+		const diff = dateNow.getTime() - dateDegree.getTime()
+		const years = diff / (1000 * 60 * 60 * 24 * 365.25)
+		return Math.floor(years)
+	}
 </script>
 
 <section-svlt id="bio-section" bind:this={selfElement}>
 	<p>
-		Hello!, my name is Paco Gimeno and I'm a software engineer with 6 years of experience. I'm passionate about creating
-		innovative solutions to complex problems and enjoy working collaboratively with others. My technical skills include
-		proficiency in Javascript/Typescript and Svelte. I'm also a strong communicator and enjoy helping others learn and grow.
+		Hello!, my name is Paco Gimeno and I'm a software engineer with {calculateYears()} years of experience.
+		<br />
+		<br />
+		I'm passionate about creating innovative solutions to complex problems and enjoy working collaboratively with others.
+		<br />
+		<br />
+		My technical skills include proficiency in Javascript/Typescript and Svelte.
+		<br />
+		<br />
+		I'm also a strong communicator and enjoy helping others learn and grow.
 	</p>
 </section-svlt>
 
@@ -32,9 +47,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		text-align: center;
 	}
 
 	p {
-		max-width: 200px;
+		max-width: 400px;
+	}
+
+	:global(html[screen-size='small'] p) {
+		max-width: initial;
+		margin: 0 4rem;
 	}
 </style>

@@ -6,6 +6,7 @@
 	import scrollToElementFn from '../functions/scrollToElement.fn'
 	import projectsConst from '../constants/projects.const'
 	import { onMount } from 'svelte'
+	import { fade, slide } from 'svelte/transition'
 
 	$: if (selfElement) {
 		$windowScrollValueStore
@@ -39,35 +40,34 @@
 	}
 
 	function updateProjectData(project: { name: string; description: string }) {
-		if (isMounted === false) return
-
-		projectTitleElement.style.opacity = '0'
-		projectDescriptionElement.style.opacity = '0'
-		setTimeout(() => {
-			projectTitle = project.name
-			projectDescription = project.description
-
-			projectTitleElement.style.opacity = '1'
-			projectDescriptionElement.style.opacity = '1'
-		}, 300)
+		// if (isMounted === false) return
+		// projectTitleElement.style.opacity = '0'
+		// projectDescriptionElement.style.opacity = '0'
+		// setTimeout(() => {
+		// 	projectTitle = project.name
+		// 	projectDescription = project.description
+		// 	projectTitleElement.style.opacity = '1'
+		// 	projectDescriptionElement.style.opacity = '1'
+		// }, 300)
 	}
 
 	onMount(() => {
-		isMounted = true
-
+		// isMounted = true
 		setTimeout(() => {
-			selectedIndex = 1
+		selectedIndex = 1
 		}, 1000)
 	})
 </script>
 
 <section-svlt id="projects-section" bind:this={selfElement}>
 	<project-preview>
-		<project-title> <span bind:this={projectTitleElement}>{projectTitle}</span> </project-title>
-
-		<project-description>
-			<span bind:this={projectDescriptionElement}>{projectDescription}</span>
-		</project-description>
+		{#each projectsConst as project, index (index)}
+			{#if selectedIndex === index}
+				<div in:slide={{ duration: 500 }} out:slide={{ duration: 500 }}>
+					<svelte:component this={project.component} />
+				</div>
+			{/if}
+		{/each}
 	</project-preview>
 
 	<projects-container>
@@ -101,6 +101,8 @@
 		flex-direction: column;
 		width: 500px;
 		height: 600px;
+
+		border-right: 4px solid #fff;
 
 		transform: translateX(10px);
 

@@ -4,7 +4,6 @@
 	import {
 		bioSectionFontWeight,
 		homeSectionFontWeight,
-		jahminSectionFontWeight,
 		langStore,
 		educationSectionFontWeight,
 		skillsSectionFontWeight,
@@ -20,14 +19,14 @@
 <navigation-svlt>
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$homeSectionFontWeight};"
+		style="font-variation-settings: 'wght' {$homeSectionFontWeight}; grid-area:home-button"
 		on:click={() => scrollToSection('home-section')}
 	>
 		{getTranslationsFn('Home', $langStore)}
 	</button>
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$bioSectionFontWeight};"
+		style="font-variation-settings: 'wght' {$bioSectionFontWeight};grid-area:bio-button"
 		on:click={() => scrollToSection('bio-section')}
 	>
 		{getTranslationsFn('Bio', $langStore)}
@@ -35,7 +34,7 @@
 
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$projectsSectionFontWeight};"
+		style="font-variation-settings: 'wght' {$projectsSectionFontWeight};grid-area:projects-button"
 		on:click={() => scrollToSection('projects-section')}
 	>
 		{getTranslationsFn('Projects', $langStore)}
@@ -43,38 +42,41 @@
 
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$jahminSectionFontWeight};"
-		on:click={() => scrollToSection('jahmin-section')}
-	>
-		Jahmin
-	</button>
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$skillsSectionFontWeight};"
+		style="font-variation-settings: 'wght' {$skillsSectionFontWeight};grid-area:skills-button"
 		on:click={() => scrollToSection('skills-section')}>{getTranslationsFn('Skills', $langStore)}</button
 	>
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$experienceSectionFontWeight};"
+		style="font-variation-settings: 'wght' {$experienceSectionFontWeight};grid-area:experience-button"
 		on:click={() => scrollToSection('experience-section')}
 	>
 		{getTranslationsFn('Experience', $langStore)}
 	</button>
 	<button
 		class="nostyle"
-		style="font-variation-settings: 'wght' {$educationSectionFontWeight};"
+		style="font-variation-settings: 'wght' {$educationSectionFontWeight};grid-area:education-button"
 		on:click={() => scrollToSection('education-section')}
 	>
 		{getTranslationsFn('Education', $langStore)}
 	</button>
 
-	<separator />
+	<separator style="grid-area:separator" />
 
-	<button class="nostyle langButton" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>
+	<button
+		class="nostyle langButton"
+		style="grid-area:lang-eng"
+		class:selected={$langStore === 'en'}
+		on:click={() => ($langStore = 'en')}
+	>
 		English
 	</button>
 
-	<button class="nostyle langButton" class:selected={$langStore === 'fr'} on:click={() => ($langStore = 'fr')}>
+	<button
+		class="nostyle langButton"
+		style="grid-area:lang-fr"
+		class:selected={$langStore === 'fr'}
+		on:click={() => ($langStore = 'fr')}
+	>
 		Français
 	</button>
 </navigation-svlt>
@@ -90,6 +92,20 @@
 		left: 1rem;
 		font-size: 1.75rem;
 		width: 200px;
+
+		z-index: 1;
+	}
+
+	:global(html[screen-size='small'] navigation-svlt) {
+		display: grid;
+		grid-template-areas:
+			'home-button bio-button'
+			'projects-button skills-button'
+			'experience-button education-button'
+			'separator separator'
+			'lang-eng lang-fr';
+		column-gap: 1rem;
+		width: 100%;
 	}
 
 	separator {

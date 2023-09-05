@@ -9,6 +9,7 @@
 	import Education from './sections/Education.svelte'
 	import Bio from './sections/Bio.svelte'
 	import Projects from './sections/Projects.svelte'
+	import mediaQueriesFn from './functions/mediaQueries.fn'
 
 	let windowScrollDebounce = undefined
 
@@ -23,6 +24,8 @@
 				$windowScrollStoppedStore = true
 			}, 500)
 		})
+
+		mediaQueriesFn()
 	})
 </script>
 
@@ -31,17 +34,30 @@
 	<Home />
 	<Bio />
 	<Projects />
-	<Jahmin />
 	<Skills />
 	<Experience />
 	<Education />
 </main>
 
 <style>
+	:global(html::before) {
+		content: attr(screen-size);
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		color: #fff;
+		font-family: 'Gabarito';
+	}
+
 	:global(section-svlt) {
 		display: flex;
 		height: 100vh;
 		padding-left: 216px;
+	}
+
+	:global(html[screen-size='small'] section-svlt) {
+		padding-left: 0;
+		padding-top: 168px;
 	}
 
 	:global(section-svlt):nth-child(odd) {
