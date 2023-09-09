@@ -6,10 +6,9 @@
 }
 
 body {
-	/* background-color: hsl(0, 0%, 5%); */
-	/* color: hsl(0, 0%, 95%); */
+	background-color: #0f103f;
 	color: #fff;
-	font-family: Gabarito;
+	font-family: Quicksand;
 	font-variation-settings: 'wght' 400;
 }
 
