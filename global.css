@@ -10,6 +10,7 @@ body {
 	color: #fff;
 	font-family: Quicksand;
 	font-variation-settings: 'wght' 400;
+	overflow-x: hidden;
 }
 
 button.nostyle {
