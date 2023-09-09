@@ -2,51 +2,44 @@
 	import { onMount } from 'svelte'
 	import getRandomNumberFn from '../functions/getRandomNumber.fn'
 
-	let numbersArray = []
+	let starrySkyElement: HTMLElement = undefined
 
 	onMount(() => {
-		for (let i = 0; i < 200; i++) {
-			numbersArray.push(getRandomNumberFn(0, 9))
-		}
+		let height = document.querySelector('html').offsetHeight
+		let width = document.querySelector('html').offsetWidth
 
-		numbersArray = numbersArray
+		for (let i = 0; i < 100; i++) {
+			let positionX = getRandomNumberFn(0, width)
+			let positionY = getRandomNumberFn(0, height)
+			let size = getRandomNumberFn(1, 6)
+
+			let starElement = document.createElement('star')
+			starElement.style.left = `${positionX}px`
+			starElement.style.top = `${positionY}px`
+			starElement.style.height = `${size}px`
+			starElement.style.width = `${size}px`
+			starElement.style.animationDelay = `${getRandomNumberFn(0, 1000)}ms`
+			starElement.style.animationDuration = `${getRandomNumberFn(10000, 20000)}ms`
+
+			starrySkyElement.appendChild(starElement)
+		}
 	})
 </script>
 
-<starry-sky>
-	{#each numbersArray as number, index (index)}
-		{#if getRandomNumberFn(0, 9) === 9}
-			<span
-				style="height: {number}px;width: {number}px;animation-delay:{getRandomNumberFn(
-					1000,
-					4000
-				)}ms;animation-duration:{getRandomNumberFn(10000, 50000)}ms;"
-			/>
-		{:else}
-			<nothing />
-		{/if}
-	{/each}
-</starry-sky>
+<starry-sky bind:this={starrySkyElement} />
 
 <style>
 	starry-sky {
-		display: grid;
-		grid-template-columns: repeat(15, 1fr);
-		grid-template-rows: repeat(15, 1fr);
-		z-index: -999;
-
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-		opacity: 0.75;
+		position: relative;
 	}
 
-	starry-sky span {
+	:global(star) {
+		position: absolute;
 		display: block;
 		background-color: #fff;
+		opacity: 0.75;
+		z-index: -1;
+
 		filter: blur(4px);
 		border-radius: 100vmax;
 
@@ -62,7 +55,7 @@
 		}
 		50% {
 			transform: scale(3);
-			filter: blur(2px);
+			filter: blur(1px);
 		}
 		100% {
 			filter: blur(4px);

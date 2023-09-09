@@ -16,6 +16,7 @@
 </script>
 
 <main>
+	<StarrySky/>
 	<Navigation />
 	<Home />
 	<Bio />
@@ -24,7 +25,7 @@
 	<Experience />
 	<Education />
 </main>
-<StarrySky/>
+
 
 <style>
 	/* :global(html::before) {
