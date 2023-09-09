@@ -1,88 +1,48 @@
 <script lang="ts">
-	import getTranslationsFn from './functions/getTranslations.fn'
-	import scrollToElementFn from './functions/scrollToElement.fn'
-	import {
-		bioSectionFontWeight,
-		homeSectionFontWeight,
-		langStore,
-		educationSectionFontWeight,
-		skillsSectionFontWeight,
-		experienceSectionFontWeight,
-		projectsSectionFontWeight
-	} from './store'
-
-	function scrollToSection(sectionId: string) {
-		scrollToElementFn(`#${sectionId}`)
-	}
+	import GoldText from './components/goldText.comp.svelte'
+	import { langStore } from './store'
 </script>
 
 <navigation-svlt>
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$homeSectionFontWeight}; grid-area:home-button"
-		on:click={() => scrollToSection('home-section')}
-	>
-		{getTranslationsFn('Home', $langStore)}
-	</button>
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$bioSectionFontWeight};grid-area:bio-button"
-		on:click={() => scrollToSection('bio-section')}
-	>
-		{getTranslationsFn('Bio', $langStore)}
-	</button>
-
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$projectsSectionFontWeight};grid-area:projects-button"
-		on:click={() => scrollToSection('projects-section')}
-	>
-		{getTranslationsFn('Projects', $langStore)}
-	</button>
-
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$skillsSectionFontWeight};grid-area:skills-button"
-		on:click={() => scrollToSection('skills-section')}>{getTranslationsFn('Skills', $langStore)}</button
-	>
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$experienceSectionFontWeight};grid-area:experience-button"
-		on:click={() => scrollToSection('experience-section')}
-	>
-		{getTranslationsFn('Experience', $langStore)}
-	</button>
-	<button
-		class="nostyle"
-		style="font-variation-settings: 'wght' {$educationSectionFontWeight};grid-area:education-button"
-		on:click={() => scrollToSection('education-section')}
-	>
-		{getTranslationsFn('Education', $langStore)}
-	</button>
-
-	<separator style="grid-area:separator" />
-
-	<button
-		class="nostyle langButton"
-		style="grid-area:lang-eng"
-		class:selected={$langStore === 'en'}
-		on:click={() => ($langStore = 'en')}
-	>
-		English
-	</button>
-
-	<button
-		class="nostyle langButton"
-		style="grid-area:lang-fr"
-		class:selected={$langStore === 'fr'}
-		on:click={() => ($langStore = 'fr')}
-	>
-		Français
-	</button>
+	<GoldText text="Paco Gimeno" style="font-size: 2.5rem;" />
+	<nav-links>
+		<a href="/">Home</a>
+		<a href="/">Bio</a>
+		<a href="/">Projects</a>
+		<a href="/">Skills</a>
+		<a href="/">Experience</a>
+		<a href="/">Education</a>
+	</nav-links>
+	<lang-change>
+		<button class="nostyle" on:click={() => ($langStore = 'en')}>English</button>
+		|
+		<button class="nostyle" on:click={() => ($langStore = 'fr')}>Français</button>
+	</lang-change>
 </navigation-svlt>
 
 <style>
 	navigation-svlt {
+		display: flex;
+		padding: 1rem;
+		background-color: rgba(0, 0, 0, 0.5);
+		align-items: center;
+	}
+
+	nav-links {
+		margin-left: auto;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		margin: 0 0.5rem;
+	}
+
+	lang-change {
+		margin-left: 2rem;
+	}
+
+	/* navigation-svlt {
 		display: flex;
 		flex-direction: column;
 		position: fixed;
@@ -106,27 +66,5 @@
 			'lang-eng lang-fr';
 		column-gap: 1rem;
 		width: 100%;
-	}
-
-	separator {
-		display: block;
-		background-color: #fff;
-		width: 100%;
-		height: 2px;
-		margin: 0.5rem 0;
-	}
-
-	button {
-		margin-bottom: 0.5rem;
-	}
-
-	button.langButton {
-		font-size: 1rem;
-
-		transition: font-variation-settings 300ms ease-in-out;
-	}
-
-	button.langButton.selected {
-		font-variation-settings: 'wght' 800;
-	}
+	} */
 </style>

@@ -14,17 +14,6 @@
 	let windowScrollDebounce = undefined
 
 	onMount(() => {
-		window.addEventListener('scroll', evt => {
-			$windowScrollValueStore = window.scrollY || document.documentElement.scrollTop
-			$windowScrollStoppedStore = false
-
-			clearTimeout(windowScrollDebounce)
-
-			windowScrollDebounce = setTimeout(() => {
-				$windowScrollStoppedStore = true
-			}, 500)
-		})
-
 		mediaQueriesFn()
 	})
 </script>
@@ -40,13 +29,13 @@
 </main>
 
 <style>
-	:global(html::before) {
+	/* :global(html::before) {
 		content: attr(screen-size);
 		position: fixed;
 		top: 10px;
 		right: 10px;
 		color: #fff;
-		font-family: 'Gabarito';
+		font-family: 'RobotoFlex';
 	}
 
 	:global(section-svlt) {
@@ -66,5 +55,5 @@
 
 	:global(section-svlt):nth-child(even) {
 		background-color: hsl(0, 0%, 10%);
-	}
+	} */
 </style>

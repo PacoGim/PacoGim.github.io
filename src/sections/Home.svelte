@@ -1,188 +1,138 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
-	import fontWeightMaxTreshold from '../constants/fontWeightMaxTreshold.const'
-	import fontWeightMinTresholdConst from '../constants/fontWeightMinTreshold.const'
-	import calculateFontWeightFn from '../functions/calculateFontWeight.fn'
-	import getTranslationsFn from '../functions/getTranslations.fn'
-	import scrollToElementFn from '../functions/scrollToElement.fn'
-	import { homeSectionFontWeight, langStore, windowScrollStoppedStore, windowScrollValueStore } from '../store'
+	import MailIcon from '../icons/MailIcon.svelte'
 
-	$: if (selfElement) {
-		$windowScrollValueStore
-		$homeSectionFontWeight = calculateFontWeightFn(selfElement)
+	let copyNotificationElement: HTMLElement = undefined
+
+	let timeoutDebounce = undefined
+
+	function copyEmailToClipboard() {
+		navigator.clipboard.writeText('PacoGimDev@gmail.com').then(() => {
+			copyNotificationElement.style.transform = 'translateY(-30px)'
+
+			clearTimeout(timeoutDebounce)
+
+			timeoutDebounce = setTimeout(() => {
+				copyNotificationElement.style.transform = 'translateY(0px)'
+			}, 2000)
+		})
 	}
-
-	$: if ($windowScrollStoppedStore === true) {
-		if ($homeSectionFontWeight <= fontWeightMaxTreshold && $homeSectionFontWeight >= fontWeightMinTresholdConst) {
-			scrollToElementFn('#home-section')
-		}
-	}
-
-	let isVisible = false
-
-	let selfElement: HTMLElement = undefined
-
-	// function foo() {
-	// 	let elementObserver: IntersectionObserver
-
-	// 	elementObserver = new IntersectionObserver(
-	// 		entries => {
-	// 			if (entries[0].isIntersecting === true) {
-	// 				isVisible = true
-	// 			} else {
-	// 				isVisible = false
-	// 			}
-	// 		},
-	// 		{
-	// 			threshold: 1
-	// 		}
-	// 	)
-
-	// 	elementObserver.observe(selfElement.querySelector('#home-section h1.who'))
-	// }
-
-	// $: console.log(isVisible)
-
-	onMount(() => {
-		isVisible = true
-	})
 </script>
 
-<section-svlt id="home-section" class:isVisible bind:this={selfElement}>
-	<section-header>
-		<img-container><img src="img/my_face.jpg" alt="" /></img-container>
-	</section-header>
+<section-svlt id="home-section">
+	<description-container>
+		<h1>Hi, I am Paco Gimeno a Fullstack Engineer based in Paris.</h1>
+		<h2>I make ideas become a reality from start to deployement</h2>
 
-	<section-body>
-		<h1 class="who">Paco Gimeno</h1>
-		<separator />
-		<h1 class="what">{getTranslationsFn('Full Stack Engineer', $langStore)}</h1>
-		<p>I make ideas become a reality <br /> from start to deployement</p>
-	</section-body>
+		<email-container>
+			<a class="email" href="mailto:PacoGimDev@gmail.com"
+				><MailIcon style="fill: #fff;margin-right: .5rem;" /> PacoGimDev@gmail.com</a
+			>
+
+			<copy-email-container>
+				<button on:click={copyEmailToClipboard} class="nostyle">Copy to clipboard</button>
+				<copy-notification bind:this={copyNotificationElement}>Copied!</copy-notification>
+			</copy-email-container>
+		</email-container>
+	</description-container>
+
+	<photo-container>
+		<img src="./img/my_face.jpg" alt="" />
+	</photo-container>
 </section-svlt>
 
 <style>
 	section-svlt {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		margin: 0 auto;
+		max-width: 1000px;
+		grid-template-columns: 400px auto;
+		padding: 4rem;
+	}
 
+	description-container {
+		/* width: 400px; */
+	}
+
+	description-container h1 {
+		font-variation-settings: 'wght' 700;
+		margin-bottom: 1.5rem;
+		font-size: 2rem;
+	}
+
+	description-container h2 {
+		font-size: 1.25rem;
+		margin-bottom: 1.5rem;
 		text-align: center;
-
-
-		/* background: linear-gradient(135deg, rgba(0, 61, 255, 1) 0%, rgba(0, 130, 255, 1) 50%, rgba(0, 191, 255, 1) 100%); */
 	}
 
-	section-header {
+	email-container {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		margin-top: 8rem;
 	}
 
-	section-body {
+	a.email {
 		display: flex;
 		align-items: center;
-		justify-content: start;
-		flex-direction: column;
-		height: 100%;
-		padding: 5rem;
+		background-color: rgba(255, 255, 255, 0.1);
+		color: inherit;
+		padding: 0.5rem 1rem;
+		text-decoration: none;
+		margin-right: 1rem;
 	}
 
-	#home-section h1,
-	#home-section separator {
-		transition-property: transform, opacity;
-		transition-duration: 2000ms;
-		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	copy-email-container {
+		display: inline-grid;
+		height: max-content;
+		justify-items: center;
 	}
 
-	#home-section p {
-		transition-property: transform, opacity;
-		transition-duration: 1500ms;
-		transition-delay: 500ms;
-		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	}
+	copy-email-container button {
+		grid-area: 1/1;
 
-	img-container {
-		display: block;
-		width: 200px;
-		height: 200px;
-		border-radius: 100vmax;
-		border: 5px solid #fff;
-		background-color: #fff;
-
-		box-shadow: 0 0 0px 0px #1a1a1a;
-
-		transform: rotateX(90deg);
-		transition-property: transform, opacity, box-shadow;
-		transition-delay: 1000ms;
-		transition-duration: 1000ms, 1000ms, 5000ms;
-		transition-timing-function: ease-in-out;
-	}
-
-	img {
-		width: 100%;
-		height: 100%;
-		border-radius: 100vmax;
-		object-fit: cover;
-	}
-
-	p {
-		margin-top: 1rem;
-		transform: translateY(200px);
-		opacity: 0;
-	}
-
-	#home-section.isVisible p {
-		transform: translateY(0px);
-		opacity: 1;
-	}
-
-	#home-section.isVisible img-container {
-		box-shadow: 0 0 500px 0px #b1b1b1;
-		transform: translateY(0px);
-		opacity: 1;
-	}
-
-	h1 {
-		font-size: 3rem;
-	}
-
-	h1.who {
+		font-size: 0.8rem;
 		font-variation-settings: 'wght' 600;
-		transform: translateY(-200px);
-		opacity: 0;
+		background: linear-gradient(to bottom right, #c961de, #2954a3);
+		padding: 0.25rem 0.5rem;
+		border-radius: 100vmax;
+		cursor: pointer;
+		z-index: 2;
 	}
 
-	#home-section.isVisible h1.who {
-		transform: translateY(0px);
-		opacity: 1;
-	}
+	copy-email-container copy-notification {
+		z-index: 1;
+		grid-area: 1/1;
 
-	h1.what {
-		transform: translateY(200px);
-		opacity: 0;
-	}
+		padding: 0.25rem 0.5rem;
+		font-size: 0.8rem;
+		font-variation-settings: 'wght' 600;
 
-	#home-section.isVisible h1.what {
-		transform: translateY(0px);
-		opacity: 1;
-	}
-
-	separator {
-		display: block;
-		background-color: #fff;
-		height: 5px;
-		width: 50%;
+    height: max-content;
+		width: max-content;
+		color: #232323;
+		background-color: #ececec;
 
 		border-radius: 100vmax;
+		transform: translateY(0px);
 
-		margin: 1rem 0;
-		transform: scale(0);
-		opacity: 0;
+		transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	}
 
-	#home-section.isVisible separator {
-		transform: scale(1);
-		opacity: 1;
+	photo-container {
+		width: 100%;
+		display: flex;
+		place-self: center;
+		height: 300px;
+		width: 300px;
+		border-radius: 100vmax;
+		border: 4px solid #fff;
+
+		box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.5); /* x | y | blur | spread | color */
+	}
+
+	photo-container img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 100vmax;
 	}
 </style>
