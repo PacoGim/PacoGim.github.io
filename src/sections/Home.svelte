@@ -40,17 +40,18 @@
 	</photo-container>
 </section-svlt>
 
-<style>
+<style lang="scss">
 	section-svlt {
-		display: grid;
+		display: flex;
+
 		margin: 0 auto;
 		max-width: 1000px;
-		grid-template-columns: 400px auto;
+		// grid-template-columns: 400px auto;
 		padding: 4rem;
 	}
 
 	description-container {
-		/* width: 400px; */
+		width: 400px;
 	}
 
 	description-container h1 {
@@ -106,7 +107,7 @@
 		font-size: 0.8rem;
 		font-variation-settings: 'wght' 600;
 
-    height: max-content;
+		height: max-content;
 		width: max-content;
 		color: #232323;
 		background-color: #ececec;
@@ -126,6 +127,8 @@
 		border-radius: 100vmax;
 		border: 4px solid #fff;
 
+		margin: 0 auto;
+
 		box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.5); /* x | y | blur | spread | color */
 	}
 
@@ -134,5 +137,54 @@
 		width: 100%;
 		object-fit: cover;
 		border-radius: 100vmax;
+	}
+
+	:global(html[screen-size='medium']),
+	:global(html[screen-size='small']) {
+		section-svlt {
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+
+		photo-container {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	:global(html[screen-size='small']) {
+		section-svlt {
+			padding: 5rem 1rem;
+			text-align: center;
+			word-wrap: break-word;
+		}
+
+		description-container {
+			width: 100%;
+		}
+
+		description-container h1 {
+			font-size: 1.25rem;
+		}
+
+		description-container h2 {
+			font-size: 1rem;
+		}
+
+		copy-email-container {
+			display: none;
+		}
+
+		email-container {
+			justify-content: center;
+		}
+
+		email-container a {
+			margin-right: 0;
+		}
+
+		photo-container {
+			width: 200px;
+			height: 200px;
+		}
 	}
 </style>

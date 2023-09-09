@@ -51,14 +51,14 @@
 			100deg,
 			transparent 0%,
 			transparent 6rem,
-			white 11rem,
+			#efe1d2 11rem,
 			transparent 11.15rem,
 			transparent 15rem,
 			rgba(255, 255, 255, 0.3) 20rem,
 			transparent 25rem,
 			transparent 27rem,
 			rgba(255, 255, 255, 0.6) 32rem,
-			white 33rem,
+			#efe1d2 33rem,
 			rgba(255, 255, 255, 0.3) 33.15rem,
 			transparent 38rem,
 			transparent 40rem,
@@ -109,7 +109,7 @@
 		-webkit-animation-timing-function: linear;
 		animation-timing-function: linear;
 	}
-
+/*
 	@-webkit-keyframes shine {
 		0% {
 			background-position: -50rem 0;
@@ -177,5 +177,5 @@
 		100% {
 			opacity: 1;
 		}
-	}
+	} */
 </style>

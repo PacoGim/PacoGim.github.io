@@ -1,10 +1,13 @@
 <script lang="ts">
 	import GoldText from './components/goldText.comp.svelte'
-	import { langStore } from './store'
+	import { currentScreenSize, langStore } from './store'
 </script>
 
 <navigation-svlt>
-	<GoldText text="Paco Gimeno" style="font-size: 2.5rem;" />
+	<GoldText
+		text={$currentScreenSize === 'small' ? 'PG' : 'Paco Gimeno'}
+		style="font-size: 2.5rem;margin-right:1rem;white-space: nowrap;"
+	/>
 	<nav-links>
 		<a href="/">Home</a>
 		<a href="/">Bio</a>
@@ -14,13 +17,13 @@
 		<a href="/">Education</a>
 	</nav-links>
 	<lang-change>
-		<button class="nostyle" on:click={() => ($langStore = 'en')}>English</button>
-		|
-		<button class="nostyle" on:click={() => ($langStore = 'fr')}>Français</button>
+		<button class="nostyle" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>English</button>
+		<separator>|</separator>
+		<button class="nostyle" class:selected={$langStore === 'fr'} on:click={() => ($langStore = 'fr')}>Français</button>
 	</lang-change>
 </navigation-svlt>
 
-<style>
+<style lang="scss">
 	navigation-svlt {
 		display: flex;
 		padding: 1rem;
@@ -30,16 +33,31 @@
 
 	nav-links {
 		margin-left: auto;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		text-align: center;
 	}
 
 	a {
+		display: inline-block;
 		text-decoration: none;
 		color: inherit;
 		margin: 0 0.5rem;
+		padding: 0.5rem 0rem;
 	}
 
 	lang-change {
+		display: flex;
 		margin-left: 2rem;
+		white-space: nowrap;
+	}
+
+	lang-change button.selected {
+		font-variation-settings: 'wght' 700;
+	}
+
+	lang-change separator {
+		margin: 0 0.25rem;
 	}
 
 	/* navigation-svlt {
@@ -54,17 +72,25 @@
 		width: 200px;
 
 		z-index: 1;
+	}*/
+
+	:global(html[screen-size='medium']) {
+		nav-links {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		lang-change {
+			flex-direction: column;
+		}
+
+		lang-change separator {
+			display: none;
+		}
 	}
 
-	:global(html[screen-size='small'] navigation-svlt) {
-		display: grid;
-		grid-template-areas:
-			'home-button bio-button'
-			'projects-button skills-button'
-			'experience-button education-button'
-			'separator separator'
-			'lang-eng lang-fr';
-		column-gap: 1rem;
-		width: 100%;
-	} */
+	:global(html[screen-size='small']) {
+		nav-links {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 </style>

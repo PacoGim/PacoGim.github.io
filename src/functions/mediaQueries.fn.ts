@@ -1,3 +1,5 @@
+import { currentScreenSize } from '../store'
+
 let htmlElement = selectHTMLElement()
 
 export default function () {
@@ -5,7 +7,7 @@ export default function () {
 
 	smallScreenMQ.addEventListener('change', evt => {
 		if (evt.matches === true) {
-			htmlElement.setAttribute('screen-size', 'small')
+			setHTMLAttribute('small')
 		}
 	})
 
@@ -13,7 +15,7 @@ export default function () {
 
 	mediumScreenMQ.addEventListener('change', evt => {
 		if (evt.matches === true) {
-			htmlElement.setAttribute('screen-size', 'medium')
+			setHTMLAttribute('medium')
 		}
 	})
 
@@ -21,17 +23,22 @@ export default function () {
 
 	bigScreenMQ.addEventListener('change', evt => {
 		if (evt.matches === true) {
-			htmlElement.setAttribute('screen-size', 'big')
+			setHTMLAttribute('big')
 		}
 	})
 
 	if (smallScreenMQ.matches) {
-		htmlElement.setAttribute('screen-size', 'small')
+		setHTMLAttribute('small')
 	} else if (mediumScreenMQ.matches) {
-		htmlElement.setAttribute('screen-size', 'medium')
+		setHTMLAttribute('medium')
 	} else if (bigScreenMQ.matches) {
-		htmlElement.setAttribute('screen-size', 'big')
+		setHTMLAttribute('big')
 	}
+}
+
+function setHTMLAttribute(size: 'small' | 'medium' | 'big') {
+	htmlElement.setAttribute('screen-size', size)
+	currentScreenSize.set(size)
 }
 
 function selectHTMLElement() {

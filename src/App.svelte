@@ -2,16 +2,13 @@
 	import { onMount } from 'svelte'
 	import Navigation from './Navigation.svelte'
 	import Home from './sections/Home.svelte'
-	import { windowScrollStoppedStore, windowScrollValueStore } from './store'
-	import Jahmin from './sections/Jahmin.svelte'
 	import Skills from './sections/Skills.svelte'
 	import Experience from './sections/Experience.svelte'
 	import Education from './sections/Education.svelte'
 	import Bio from './sections/Bio.svelte'
 	import Projects from './sections/Projects.svelte'
 	import mediaQueriesFn from './functions/mediaQueries.fn'
-
-	let windowScrollDebounce = undefined
+	import StarrySky from './background/StarrySky.svelte'
 
 	onMount(() => {
 		mediaQueriesFn()
@@ -27,6 +24,7 @@
 	<Experience />
 	<Education />
 </main>
+<StarrySky/>
 
 <style>
 	/* :global(html::before) {
