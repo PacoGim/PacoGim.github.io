@@ -129,7 +129,7 @@
 
 		margin: 0 auto;
 
-		box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.5); /* x | y | blur | spread | color */
+		box-shadow: 0px 0px 50px 10px #2954a3; /* x | y | blur | spread | color */
 	}
 
 	photo-container img {
