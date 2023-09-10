@@ -57,11 +57,10 @@
 	description-container h1 {
 		font-variation-settings: 'wght' 700;
 		margin-bottom: 1.5rem;
-		font-size: 2rem;
+
 	}
 
 	description-container h2 {
-		font-size: 1.25rem;
 		margin-bottom: 1.5rem;
 		text-align: center;
 	}
@@ -160,14 +159,6 @@
 
 		description-container {
 			width: 100%;
-		}
-
-		description-container h1 {
-			font-size: 1.25rem;
-		}
-
-		description-container h2 {
-			font-size: 1rem;
 		}
 
 		copy-email-container {

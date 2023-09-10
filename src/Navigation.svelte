@@ -2,7 +2,7 @@
 	import GoldText from './components/goldText.comp.svelte'
 	import { currentScreenSize, langStore } from './store'
 
-	let isActive = true
+	let isActive = false
 </script>
 
 <navigation-svlt>
@@ -17,7 +17,7 @@
 	{/if}
 
 	<nav-links data-isActive={String(isActive)}>
-		<a href="#home-section">Home</a>
+		<a href="#/">Home</a>
 		<a href="#bio-section">Bio</a>
 		<a href="/">Projects</a>
 		<a href="/">Skills</a>

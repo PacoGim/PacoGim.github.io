@@ -15,7 +15,7 @@
 	})
 </script>
 
-<main>
+<main id="/">
 	<StarrySky/>
 	<Navigation />
 	<Home />
