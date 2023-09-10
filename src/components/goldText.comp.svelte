@@ -13,10 +13,11 @@
 		display: flex;
 		align-items: center;
 		font-family: Belovedays;
+		max-height: 45px;
 	}
 
 	.gold-text {
-		max-height: 45px;
+		max-height: inherit;
 		display: inline-block;
 		color: transparent;
 		background-color: #e8a95b;

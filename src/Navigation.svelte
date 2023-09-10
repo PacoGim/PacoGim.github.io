@@ -17,11 +17,11 @@
 	{/if}
 
 	<nav-links data-isActive={String(isActive)}>
-		<a href="#/">Home</a>
-		<a href="#bio-section">Bio</a>
-		<a href="/">Projects</a>
-		<a href="/">Skills</a>
-		<a href="/">Experience</a>
+		<a href="#/" on:click={() => (isActive = false)}>Home</a>
+		<a href="#bio-section" on:click={() => (isActive = false)}>Bio</a>
+		<a href="#projects-section" on:click={() => (isActive = false)}>Projects</a>
+		<a href="#skills-section">Skills</a>
+		<a href="#experience-section">Experience</a>
 		<a href="/">Education</a>
 		<lang-change>
 			<button class="nostyle" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>English</button>
@@ -40,7 +40,7 @@
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.85);
 		height: 2.5rem;
 		width: 2.5rem;
 		border-radius: 2.5px;
@@ -87,6 +87,7 @@
 		text-align: center;
 		transition: transform 0ms ease-out;
 		transform: translateY(77px) translateX(110%);
+		z-index: 1;
 	}
 
 	a {
@@ -141,7 +142,7 @@
 			position: absolute;
 			display: flex;
 			flex-direction: column;
-			background-color: rgba(0, 0, 0, 0.5);
+			background-color: rgba(0, 0, 0, 0.85);
 			transform: translateY(77px) translateX(110%);
 			top: 0;
 			right: 0;

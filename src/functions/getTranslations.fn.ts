@@ -14,11 +14,14 @@ const full = {
 	Experience: {
 		fr: 'Expérience'
 	},
-	'Education': {
+	Education: {
 		fr: 'Éducation'
 	},
-	'Bio': {
+	Bio: {
 		fr: 'Bio'
+	},
+	'Jahmin is my main project, which I have been passionately and independently working on full time for the past 3 years.': {
+		fr: 'Jahmin est mon projet principal sur lequel je travaille avec passion et indépendance à plein temps depuis les 3 dernières années.'
 	}
 }
 

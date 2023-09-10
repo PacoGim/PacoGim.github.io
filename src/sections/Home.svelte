@@ -2,6 +2,8 @@
 	import MailIcon from '../icons/MailIcon.svelte'
 	import { currentScreenSize } from '../store'
 
+
+
 	let copyNotificationElement: HTMLElement = undefined
 
 	let timeoutDebounce = undefined
@@ -20,13 +22,13 @@
 
 	function selectText(evt: MouseEvent) {
 		let target = evt.currentTarget as HTMLElement
-		let spanElement = target
+		let inputElement = target as HTMLInputElement
 
-		if (target.tagName !== 'span') {
-			spanElement = target.querySelector('span')
+		if (target.tagName !== 'input') {
+			inputElement = target.querySelector('input')
 		}
 
-		window.getSelection().selectAllChildren(spanElement)
+		inputElement.select()
 	}
 </script>
 
@@ -42,7 +44,7 @@
 				>
 			{:else}
 				<button class="nostyle email" on:click={selectText}
-					><MailIcon style="fill: #fff;margin-right: .5rem;" /> <span>PacoGimDev@gmail.com</span></button
+					><MailIcon style="fill: #fff;margin-right: .5rem;" /> <input value="PacoGimDev@gmail.com" readonly /></button
 				>
 			{/if}
 
@@ -95,7 +97,18 @@
 		color: inherit;
 		padding: 0.5rem 1rem;
 		text-decoration: none;
+	}
+
+	a.email {
 		margin-right: 1rem;
+	}
+
+	button input {
+		background-color: transparent;
+		color: inherit;
+		font-family: inherit;
+		border: none;
+		font-size: inherit;
 	}
 
 	copy-email-container {

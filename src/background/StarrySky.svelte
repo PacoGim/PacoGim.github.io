@@ -1,26 +1,48 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
+	import { afterUpdate, onMount } from 'svelte'
 	import getRandomNumberFn from '../functions/getRandomNumber.fn'
 	import { currentScreenSize } from '../store'
 
 	let starrySkyElement: HTMLElement = undefined
 
 	onMount(() => {
-		let height = document.querySelector('body').scrollHeight
-		let width = window.innerWidth
+		setTimeout(() => {
+			let height = Math.max(
+				document.body.scrollHeight,
+				document.body.offsetHeight,
+				document.documentElement.clientHeight,
+				document.documentElement.scrollHeight,
+				document.documentElement.offsetHeight
+			)
 
-		for (let i = 0; i < 100; i++) {
-			starrySkyElement.appendChild(createStar(height, width))
-		}
+			let width = window.innerWidth
 
-		for (let i = 0; i < 3; i++) {
-			starrySkyElement.appendChild(createCosmicSmoke(height, width))
-		}
+			let starNumbers = 0
+
+			switch ($currentScreenSize) {
+				case 'big':
+					starNumbers = 100
+					break
+				case 'medium':
+					starNumbers = 66
+					break
+				default:
+					starNumbers = 33
+			}
+
+			for (let i = 0; i < 3; i++) {
+				starrySkyElement.appendChild(createCosmicSmoke(height, width))
+			}
+
+			for (let i = 0; i < starNumbers; i++) {
+				starrySkyElement.appendChild(createStar(height, width))
+			}
+		}, 10)
 	})
 
 	function createCosmicSmoke(height: number, width: number) {
 		let positionX = getRandomNumberFn(0, width) - width / 3
-		let positionY = getRandomNumberFn(0, height)
+		let positionY = getRandomNumberFn(0, height) - height / 3
 		let size = width / 3
 
 		let cosmicSmokeElement = document.createElement('cosmic-smoke')

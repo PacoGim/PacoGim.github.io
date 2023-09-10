@@ -4,7 +4,7 @@
 	import Home from './sections/Home.svelte'
 	import Skills from './sections/Skills.svelte'
 	import Experience from './sections/Experience.svelte'
-	import Education from './sections/Education.svelte'
+	import Footer from './sections/Footer.svelte'
 	import Bio from './sections/Bio.svelte'
 	import Projects from './sections/Projects.svelte'
 	import mediaQueriesFn from './functions/mediaQueries.fn'
@@ -23,7 +23,7 @@
 	<Projects />
 	<Skills />
 	<Experience />
-	<Education />
+	<Footer />
 </main>
 
 

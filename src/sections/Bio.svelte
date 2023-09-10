@@ -39,16 +39,6 @@
 		border-radius: 20px;
 
 		backdrop-filter: blur(5px);
-		background-color: rgba(0, 0, 0, 0.25);
-	}
-
-	p {
-		font-size: 1.1rem;
-	}
-
-	:global(html[screen-size='small']) {
-		section-svlt{
-      border-radius: 0;
-    }
+		background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
 	}
 </style>
