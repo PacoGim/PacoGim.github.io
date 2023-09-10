@@ -46,6 +46,7 @@
 		border-radius: 2.5px;
 		padding: 0.5rem;
 		border: 1px solid #fff;
+		z-index: 1;
 	}
 
 	hamburger-menu hamburger-line {

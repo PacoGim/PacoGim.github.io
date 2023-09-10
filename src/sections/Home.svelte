@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MailIcon from '../icons/MailIcon.svelte'
+	import { currentScreenSize } from '../store'
 
 	let copyNotificationElement: HTMLElement = undefined
 
@@ -16,6 +17,17 @@
 			}, 2000)
 		})
 	}
+
+	function selectText(evt: MouseEvent) {
+		let target = evt.currentTarget as HTMLElement
+		let spanElement = target
+
+		if (target.tagName !== 'span') {
+			spanElement = target.querySelector('span')
+		}
+
+		window.getSelection().selectAllChildren(spanElement)
+	}
 </script>
 
 <section-svlt id="home-section">
@@ -24,9 +36,15 @@
 		<h2>I make ideas become a reality from start to deployement</h2>
 
 		<email-container>
-			<a class="email" href="mailto:PacoGimDev@gmail.com"
-				><MailIcon style="fill: #fff;margin-right: .5rem;" /> PacoGimDev@gmail.com</a
-			>
+			{#if $currentScreenSize !== 'small'}
+				<a class="email" href="mailto:PacoGimDev@gmail.com"
+					><MailIcon style="fill: #fff;margin-right: .5rem;" /> PacoGimDev@gmail.com</a
+				>
+			{:else}
+				<button class="nostyle email" on:click={selectText}
+					><MailIcon style="fill: #fff;margin-right: .5rem;" /> <span>PacoGimDev@gmail.com</span></button
+				>
+			{/if}
 
 			<copy-email-container>
 				<button on:click={copyEmailToClipboard} class="nostyle">Copy to clipboard</button>
@@ -57,7 +75,6 @@
 	description-container h1 {
 		font-variation-settings: 'wght' 700;
 		margin-bottom: 1.5rem;
-
 	}
 
 	description-container h2 {
@@ -70,6 +87,7 @@
 		align-items: center;
 	}
 
+	button.email,
 	a.email {
 		display: flex;
 		align-items: center;

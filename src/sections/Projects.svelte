@@ -7,5 +7,7 @@
 </section-svlt>
 
 <style>
-
+section-svlt{
+  display: block;
+}
 </style>

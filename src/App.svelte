@@ -28,6 +28,9 @@
 
 
 <style>
+	main{
+		position: relative;
+	}
 	/* :global(html::before) {
 		content: attr(screen-size);
 		position: fixed;

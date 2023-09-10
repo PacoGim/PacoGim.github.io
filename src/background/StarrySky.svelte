@@ -1,28 +1,27 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 	import getRandomNumberFn from '../functions/getRandomNumber.fn'
+	import { currentScreenSize } from '../store'
 
 	let starrySkyElement: HTMLElement = undefined
 
-	// TODO Add More stuff in space
-	// 2954A3
 	onMount(() => {
-		let height = document.querySelector('html').offsetHeight
-		let width = document.querySelector('html').offsetWidth
+		let height = document.querySelector('body').scrollHeight
+		let width = window.innerWidth
 
 		for (let i = 0; i < 100; i++) {
 			starrySkyElement.appendChild(createStar(height, width))
 		}
 
-		for (let i = 0; i < 2; i++) {
+		for (let i = 0; i < 3; i++) {
 			starrySkyElement.appendChild(createCosmicSmoke(height, width))
 		}
 	})
 
 	function createCosmicSmoke(height: number, width: number) {
-		let positionX = getRandomNumberFn(0, width)
+		let positionX = getRandomNumberFn(0, width) - width / 3
 		let positionY = getRandomNumberFn(0, height)
-		let size = 500
+		let size = width / 3
 
 		let cosmicSmokeElement = document.createElement('cosmic-smoke')
 
@@ -55,7 +54,10 @@
 
 <style>
 	starry-sky {
-		position: relative;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
 	}
 
 	:global(star) {
@@ -77,7 +79,6 @@
 		position: absolute;
 		display: block;
 		background-color: #2954a3;
-		opacity: 0.75;
 		z-index: -2;
 
 		filter: blur(1000px);
