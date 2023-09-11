@@ -14,7 +14,7 @@
 		<project-image>
 			<img
 				style="display: {hqImageLoaded === false ? 'initial' : 'none'};"
-				src="./img/jahmin_screenshot_placeholder.webp"
+				src="./img/jahmin_screenshot_lq.webp"
 				alt=""
 			/>
 
