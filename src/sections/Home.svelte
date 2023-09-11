@@ -55,7 +55,7 @@
 	</description-container>
 
 	<photo-container>
-		<img src="./img/my_face.jpg" alt="" />
+		<img src="./img/my_face.webp" alt="" />
 	</photo-container>
 </section-svlt>
 

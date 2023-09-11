@@ -2,8 +2,6 @@
 	import getTranslationsFn from '../functions/getTranslations.fn'
 	import { langStore } from '../store'
 
-	let placeHolderLoaded = false
-	let lqImageLoaded = false
 	let hqImageLoaded = false
 </script>
 
