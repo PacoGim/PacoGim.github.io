@@ -7,7 +7,15 @@
 </script>
 
 <navigation-svlt>
-	<GoldText text="Paco Gimeno" style="font-size: 2.5rem;margin-right:1rem;white-space: nowrap;" />
+	<GoldText text={$currentScreenSize!=='small'?'Paco Gimeno':'PG'} style="font-size: 2.5rem;margin-right:1rem;white-space: nowrap;" />
+
+	{#if $currentScreenSize === 'small'}
+		<lang-change>
+			<button class="nostyle" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>English</button>
+			<separator>|</separator>
+			<button class="nostyle" class:selected={$langStore === 'fr'} on:click={() => ($langStore = 'fr')}>Français</button>
+		</lang-change>
+	{/if}
 
 	{#if $currentScreenSize === 'small'}
 		<hamburger-menu onclick={() => (isActive = !isActive)} data-isActive={String(isActive)}>
@@ -23,11 +31,13 @@
 		<a href="#projects-section" on:click={() => (isActive = false)}>{getTranslationsFn('Projects', $langStore)}</a>
 		<a href="#skills-section">{getTranslationsFn('Skills', $langStore)}</a>
 		<a href="#experience-section">{getTranslationsFn('Experience', $langStore)}</a>
-		<lang-change>
-			<button class="nostyle" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>English</button>
-			<separator>|</separator>
-			<button class="nostyle" class:selected={$langStore === 'fr'} on:click={() => ($langStore = 'fr')}>Français</button>
-		</lang-change>
+		{#if $currentScreenSize !== 'small'}
+			<lang-change>
+				<button class="nostyle" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>English</button>
+				<separator>|</separator>
+				<button class="nostyle" class:selected={$langStore === 'fr'} on:click={() => ($langStore = 'fr')}>Français</button>
+			</lang-change>
+		{/if}
 	</nav-links>
 </navigation-svlt>
 
@@ -121,7 +131,7 @@
 
 	:global(html[screen-size='medium']) {
 		nav-links {
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(5, 1fr);
 			transform: translateY(0) translateX(0);
 		}
 
@@ -135,6 +145,11 @@
 	:global(html[screen-size='small']) {
 		navigation-svlt {
 			justify-content: space-between;
+			padding-right: 4rem;
+		}
+
+		navigation-svlt lang-change {
+			margin: 0 auto;
 		}
 
 		nav-links {
