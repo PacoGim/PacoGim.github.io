@@ -38,7 +38,7 @@ const full = {
 	'Hello!': {
 		fr: 'Bonjour!'
 	},
-	'I’m pleased to see that I may have peaked your interest and for that I’m already glad.': {
+	'I’m pleased to see that I may have piqued your interest and for that I’m already glad.': {
 		fr: 'Je suis ravi de voir que je peux avoir suscité votre intérêt et pour cela je suis déjà content.'
 	},
 	'Born in France in 1992, I quickly learned to use computers. High School bored me to death so I finished all the mandatory studies, moved to Spain then jumped right away in Programming studies since I new that this was my vocation.':

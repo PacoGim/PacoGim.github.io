@@ -13,7 +13,7 @@
 
 <section-svlt id="bio-section">
 	<h1>{getTranslationsFn('Hello!', $langStore)}</h1>
-	<h2>{getTranslationsFn('I’m pleased to see that I may have peaked your interest and for that I’m already glad.', $langStore)}</h2>
+	<h2>{getTranslationsFn('I’m pleased to see that I may have piqued your interest and for that I’m already glad.', $langStore)}</h2>
 	<br />
 	<p>
 		{getTranslationsFn('Born in France in 1992, I quickly learned to use computers. High School bored me to death so I finished all the mandatory studies, moved to Spain then jumped right away in Programming studies since I new that this was my vocation.', $langStore)}
