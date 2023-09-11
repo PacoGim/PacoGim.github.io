@@ -9,6 +9,8 @@
 	import Projects from './sections/Projects.svelte'
 	import mediaQueriesFn from './functions/mediaQueries.fn'
 	import StarrySky from './background/StarrySky.svelte'
+	import { langStore } from './store'
+	import getTranslationsFn from './functions/getTranslations.fn'
 
 	onMount(() => {
 		mediaQueriesFn()
@@ -16,7 +18,7 @@
 </script>
 
 <main id="/">
-	<StarrySky/>
+	<StarrySky />
 	<Navigation />
 	<Home />
 	<Bio />
@@ -24,38 +26,35 @@
 	<Skills />
 	<Experience />
 	<Footer />
+	<go-up-container>
+		<button
+			class="nostyle"
+			on:click={() => document.querySelector('body').scrollIntoView({ block: 'start', behavior: 'smooth' })}
+		>
+			{getTranslationsFn('Go back up', $langStore)}
+		</button>
+	</go-up-container>
 </main>
 
-
 <style>
-	main{
+	main {
 		position: relative;
-	}
-	/* :global(html::before) {
-		content: attr(screen-size);
-		position: fixed;
-		top: 10px;
-		right: 10px;
-		color: #fff;
-		font-family: 'RobotoFlex';
+
+		padding-bottom: 10rem;
 	}
 
-	:global(section-svlt) {
+	go-up-container {
 		display: flex;
-		height: 100vh;
-		padding-left: 216px;
-	}
+		width: 100%;
+		align-items: center;
+		justify-content: center;
 
-	:global(html[screen-size='small'] section-svlt) {
-		padding-left: 0;
-		padding-top: 168px;
+		margin-top: 5rem;
 	}
+	go-up-container button {
+		padding: 0.5rem 1rem;
+		border-radius: 100vmax;
 
-	:global(section-svlt):nth-child(odd) {
-		background-color: hsl(0, 0%, 20%);
+		background: linear-gradient(to bottom right, #c961de, #2954a3);
 	}
-
-	:global(section-svlt):nth-child(even) {
-		background-color: hsl(0, 0%, 10%);
-	} */
 </style>

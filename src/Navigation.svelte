@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GoldText from './components/goldText.comp.svelte'
+	import getTranslationsFn from './functions/getTranslations.fn'
 	import { currentScreenSize, langStore } from './store'
 
 	let isActive = false
@@ -17,12 +18,11 @@
 	{/if}
 
 	<nav-links data-isActive={String(isActive)}>
-		<a href="#/" on:click={() => (isActive = false)}>Home</a>
-		<a href="#bio-section" on:click={() => (isActive = false)}>Bio</a>
-		<a href="#projects-section" on:click={() => (isActive = false)}>Projects</a>
-		<a href="#skills-section">Skills</a>
-		<a href="#experience-section">Experience</a>
-		<a href="/">Education</a>
+		<a href="#/" on:click={() => (isActive = false)}>{getTranslationsFn('Home', $langStore)}</a>
+		<a href="#bio-section" on:click={() => (isActive = false)}>{getTranslationsFn('Bio', $langStore)}</a>
+		<a href="#projects-section" on:click={() => (isActive = false)}>{getTranslationsFn('Projects', $langStore)}</a>
+		<a href="#skills-section">{getTranslationsFn('Skills', $langStore)}</a>
+		<a href="#experience-section">{getTranslationsFn('Experience', $langStore)}</a>
 		<lang-change>
 			<button class="nostyle" class:selected={$langStore === 'en'} on:click={() => ($langStore = 'en')}>English</button>
 			<separator>|</separator>
@@ -83,7 +83,7 @@
 	nav-links {
 		margin-left: auto;
 		display: grid;
-		grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: repeat(6, 1fr);
 		text-align: center;
 		transition: transform 0ms ease-out;
 		transform: translateY(77px) translateX(110%);

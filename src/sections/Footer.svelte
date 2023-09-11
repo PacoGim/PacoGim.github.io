@@ -1,5 +1,7 @@
 <script lang="ts">
 	import GoldText from '../components/goldText.comp.svelte'
+	import getTranslationsFn from '../functions/getTranslations.fn'
+	import { langStore } from '../store'
 </script>
 
 <section-svlt id="footer-section">
@@ -7,7 +9,7 @@
 		<GoldText text="PG" style="font-size: 2rem;max-height: 36px;" />
 	</my-logo>
 
-		<span> Designed by Paco Gimeno</span>
+		<span>{getTranslationsFn("Designed by Paco Gimeno", $langStore)}</span>
 	<contact>
 		<a href="https://github.com/PacoGim" target="_blank"><img src="./img/github_logo.svg" alt="" /></a>
 		<a href="https://www.linkedin.com/in/paco-gimeno-958a53283/" target="_blank"><img src="./img/linkedin_logo.svg" alt="" /></a
@@ -17,6 +19,11 @@
 
 <style lang="scss">
 	section-svlt {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
 		height: 60px;
 		font-size: 1rem;
 		display: flex;

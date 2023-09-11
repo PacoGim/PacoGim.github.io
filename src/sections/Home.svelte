@@ -1,8 +1,7 @@
 <script lang="ts">
+	import getTranslationsFn from '../functions/getTranslations.fn'
 	import MailIcon from '../icons/MailIcon.svelte'
-	import { currentScreenSize } from '../store'
-
-
+	import { currentScreenSize, langStore } from '../store'
 
 	let copyNotificationElement: HTMLElement = undefined
 
@@ -34,8 +33,8 @@
 
 <section-svlt id="home-section">
 	<description-container>
-		<h1>Hi, I am Paco Gimeno a Fullstack Engineer based in Paris.</h1>
-		<h2>I make ideas become a reality from start to deployement</h2>
+		<h1>{getTranslationsFn('Hi, I am Paco Gimeno a Full Stack Engineer based in Paris.', $langStore)}</h1>
+		<h2>{getTranslationsFn('I make ideas become a reality from start to deployment', $langStore)}</h2>
 
 		<email-container>
 			{#if $currentScreenSize !== 'small'}
@@ -49,8 +48,8 @@
 			{/if}
 
 			<copy-email-container>
-				<button on:click={copyEmailToClipboard} class="nostyle">Copy to clipboard</button>
-				<copy-notification bind:this={copyNotificationElement}>Copied!</copy-notification>
+				<button on:click={copyEmailToClipboard} class="nostyle">{getTranslationsFn('Copy to clipboard', $langStore)}</button>
+				<copy-notification bind:this={copyNotificationElement}>{getTranslationsFn('Copied!', $langStore)}</copy-notification>
 			</copy-email-container>
 		</email-container>
 	</description-container>
@@ -77,11 +76,12 @@
 	description-container h1 {
 		font-variation-settings: 'wght' 700;
 		margin-bottom: 1.5rem;
+		text-align: left;
 	}
 
 	description-container h2 {
 		margin-bottom: 1.5rem;
-		text-align: center;
+		text-align: left;
 	}
 
 	email-container {

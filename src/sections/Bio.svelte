@@ -1,4 +1,7 @@
 <script lang="ts">
+	import getTranslationsFn from "../functions/getTranslations.fn"
+	import { langStore } from "../store"
+
 	function calculateYears() {
 		const dateNow = new Date()
 		const dateDegree = new Date(2017, 6, 29)
@@ -9,24 +12,24 @@
 </script>
 
 <section-svlt id="bio-section">
-	<h1>Hello!,</h1>
-	<h2>I’m pleased to see that I may have peaked your interest and for that I’m already glad.</h2>
+	<h1>{getTranslationsFn('Hello!', $langStore)}</h1>
+	<h2>{getTranslationsFn('I’m pleased to see that I may have peaked your interest and for that I’m already glad.', $langStore)}</h2>
 	<br />
 	<p>
-		Born in France in 1992, I quickly learned to use computers. High School bored me to death so I finished all the mandatory
-		studies, moved to Spain then jumped right away in Programming studies.
+		{getTranslationsFn('Born in France in 1992, I quickly learned to use computers. High School bored me to death so I finished all the mandatory studies, moved to Spain then jumped right away in Programming studies since I new that this was my vocation.', $langStore)}
 	</p>
 	<br />
-	<p>I managed to surpass my expectations and ended up with the best grades while also helping my other classmates.</p>
+	<p>{getTranslationsFn('I managed to surpass my expectations and ended up with the best grades while also helping my other classmates.', $langStore)}</p>
 	<br />
 	<p>
-		For my last year of schooling, I managed to get a place at the multinational INDRA as an intern but more about that in the
-		Experience section.
+		{getTranslationsFn('For my last year of schooling, I managed to get a place at the multinational INDRA as an intern but more about that in the Experience section.', $langStore)}
 	</p>
 	<br />
-	<p>Now I'm a full stack engineer with {calculateYears()} years of experience and I’m back in France looking for a job.</p>
+	<p>{getTranslationsFn("Now I'm a full stack engineer with ", $langStore)} {calculateYears()} {getTranslationsFn(" years of experience and I’m back in France looking for a job.", $langStore)}</p>
 	<br />
-	<p>I’m cheerful, kindhearted, lifelong learner, perfectionist and magnanimous.</p>
+	<p>{getTranslationsFn("I’m cheerful, kindhearted, lifelong learner, perfectionist and magnanimous.", $langStore)}</p>
+	<br>
+	<p>{getTranslationsFn("I speak french, english and spanish.", $langStore)}</p>
 </section-svlt>
 
 <style lang="scss">

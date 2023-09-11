@@ -1,6 +1,10 @@
 <script lang="ts">
 	import getTranslationsFn from '../functions/getTranslations.fn'
 	import { langStore } from '../store'
+
+	let placeHolderLoaded = false
+	let lqImageLoaded = false
+	let hqImageLoaded = false
 </script>
 
 <section-svlt id="projects-section">
@@ -10,11 +14,22 @@
 	<a href="https://github.com/PacoGim/Jahmin" target="_blank">Jahmin <img src="./img/github_logo.svg" alt="" /></a>
 	<project-container>
 		<project-image>
-			<img src="./img/jahmin_screenshot.webp" alt="" />
+			<img
+				style="display: {hqImageLoaded === false ? 'initial' : 'none'};"
+				src="./img/jahmin_screenshot_placeholder.webp"
+				alt=""
+			/>
+
+			<img
+				style="display: {hqImageLoaded === true ? 'initial' : 'none'};"
+				src="./img/jahmin_screenshot.webp"
+				alt=""
+				on:load={() => (hqImageLoaded = true)}
+			/>
 		</project-image>
 
 		<project-description>
-			<h2>My beloved long term project</h2>
+			<h2>{getTranslationsFn('My beloved long term project', $langStore)}</h2>
 			<p>
 				{getTranslationsFn(
 					'Jahmin is my main project, which I have been passionately and independently working on full time for the past 3 years.',
@@ -22,11 +37,16 @@
 				)}
 			</p>
 			<br />
-			<p>It's a working local music library app capable of handling 70k+ songs.</p>
+			<p>{getTranslationsFn("It's a working local music library app capable of handling 70k+ songs.", $langStore)}</p>
 			<br />
-			<p>Click on the Github logo above if you are interested!</p>
+			<p>{getTranslationsFn('Click on the Github logo above if you want to know more!', $langStore)}</p>
 			<br />
-			<h3>I have many other projects, from a way to perfect copy files on mac, to an mkv container builder... But they reside on my computer and are more personal stuff than ready to release.</h3>
+			<h3>
+				{getTranslationsFn(
+					'I have many other projects in my computer... But they are mostly script that can perform complicated tasks and they are more personal stuff than ready to release.',
+					$langStore
+				)}
+			</h3>
 		</project-description>
 	</project-container>
 </section-svlt>
