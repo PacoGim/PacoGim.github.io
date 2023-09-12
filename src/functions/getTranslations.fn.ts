@@ -39,18 +39,18 @@ const full = {
 		fr: 'Bonjour!'
 	},
 	'I’m pleased to see that I may have piqued your interest and for that I’m already glad.': {
-		fr: 'Je suis ravi de voir que je peux avoir suscité votre intérêt et pour cela je suis déjà content.'
+		fr: "Je suis ravi d'avoir réussi à susciter votre intérêt et pour cela je suis déjà content."
 	},
 	'Born in France in 1992, I quickly learned to use computers. High School bored me to death so I finished all the mandatory studies, moved to Spain then jumped right away in Programming studies since I new that this was my vocation.':
 		{
-			fr: 'Né en France en 1992, j’ai rapidement appris à utiliser les ordinateurs. Le lycée m’ennuyait à mourir, alors j’ai terminé toutes les études obligatoires, déménagé en Espagne puis me suis immédiatement lancé dans des études de programmation car je savais que c’était ma vocation.'
+			fr: 'Né en France en 1992, j’ai rapidement appris à utiliser les ordinateurs. Le lycée m’ennuyait à mourir, alors j’ai terminé toutes les études obligatoires, déménagé en Espagne puis je me suis immédiatement lancé dans des études de programmation car je savais que c’était ma vocation.'
 		},
 	'I managed to surpass my expectations and ended up with the best grades while also helping my other classmates.': {
 		fr: 'J’ai réussi à dépasser mes attentes et j’ai fini avec les meilleures notes tout en aidant aussi mes autres camarades de classe.'
 	},
 	'For my last year of schooling, I managed to get a place at the multinational INDRA as an intern but more about that in the Experience section.':
 		{
-			fr: 'Pour ma dernière année d’études, j’ai réussi à obtenir une place à la multinational INDRA en tant que stagiaire, mais plus à ce sujet dans la section Expérience.'
+			fr: 'Pour ma dernière année d’études, j’ai réussi à obtenir une place à la multinational INDRA en tant que stagiaire, mais il y aura plus à ce sujet dans la section Expérience.'
 		},
 	"Now I'm a full stack engineer with ": {
 		fr: 'Maintenant, je suis un ingénieur full stack avec '
@@ -81,7 +81,7 @@ const full = {
 		fr: 'Ma principale compétence est de trouver très rapidement des solutions aux problèmes'
 	},
 	"For frameworks, I don't mind which one as long that it gets the job done": {
-		fr: 'Pour les frameworks, peu importe lequel tant qu’il fait le travail'
+		fr: 'Pour les frameworks, peu importe lesquels tant qu’ils font le travail'
 	},
 	'I mainly program with the Svelte framework and Typescript': {
 		fr: 'Je programme principalement avec Svelte et Typescript'
@@ -96,16 +96,16 @@ const full = {
 	'It was a bad idea.': {
 		fr: "C'était une mauvaise idée."
 	},
-	"Turns out that the bank branch works with COBOL... So they teached me COBOL in like a week and that's about it really...": {
-		fr: 'Il s’avère que la succursale bancaire travaille avec COBOL… Ils m’ont donc appris COBOL en une semaine et c’est à peu près tout en réalité…'
+	"Turns out that the bank branch works with COBOL... So they teached me COBOL in like a week and that's about it really.": {
+		fr: 'Il s’avère que la succursale bancaire travaille avec COBOL… Ils m’ont donc appris COBOL en une semaine et c’est à peu près tout en réalité.'
 	},
 	'It is extremely expensive to run a program to the Main Frame so most of the programs I wrote had to be checked by someone.':
 		{
 			fr: "C'est extrêmement coûteux d’exécuter un programme sur un Main Frame, donc la plupart des programmes que j’ai écrits devaient être vérifiés par quelqu’un."
 		},
-	'At the end of the internship and after that pretty bad taste, I decided to create a massive app and make money from it… but it is not really worth the effort and I would rather work in a company with people.':
+	'At the end of the internship and after that pretty bad taste, I decided to create a massive app and make money from it, but it is not really worth the effort and I would rather work in a company with people.':
 		{
-			fr: 'À la fin du stage et après ce mauvais goût, j’ai décidé de créer une application massive et de gagner de l’argent avec… mais cela ne vaut pas vraiment l’effort et je préférerais travailler dans une entreprise avec des gens.'
+			fr: 'À la fin du stage et après ce mauvais goût, j’ai décidé de créer une application massive et de gagner de l’argent avec, mais cela ne vaut pas vraiment l’effort et je préférerais travailler dans une entreprise avec des gens.'
 		},
 	"For many years, I have been honing my skills and now, I'm feeling ready to tackle any challenge.": {
 		fr: "Depuis de nombreuses années, j'ai perfectionné mes compétences et maintenant, je me sens prêt à relever n'importe quel défi."
