@@ -17,21 +17,21 @@
 	<br />
 	<p>
 		{getTranslationsFn(
-			"Turns out that the bank branch works with COBOL... So they teached me COBOL in like a week and that's about it really...",
+			"Turns out that the bank branch works with COBOL... So they teached me COBOL in like a week and that's about it really.",
 			$langStore
 		)}
 	</p>
 	<br />
 	<p>
 		{getTranslationsFn(
-			'It is extremely expensive to run a program to the Main Frame so most of the programs I wrote had to be checked by someone.',
+			'It is extremely expensive to run a program in the mainframe so most of the programs I wrote had to be checked by someone.',
 			$langStore
 		)}
 	</p>
 	<br />
 	<p>
 		{getTranslationsFn(
-			'At the end of the internship and after that pretty bad taste, I decided to create a massive app and make money from it… but it is not really worth the effort and I would rather work in a company with people.',
+			'At the end of the internship and after that pretty bad taste, I decided to create a massive app and make money from it, but it is not really worth the effort and I would rather work in a company with people.',
 			$langStore
 		)}
 	</p>
@@ -48,7 +48,7 @@
 <style lang="scss">
 	section-svlt {
 		display: block;
-		text-align: center;
+		text-align: left;
 		padding: 5rem;
 		max-width: 800px;
 		margin: 0 auto;

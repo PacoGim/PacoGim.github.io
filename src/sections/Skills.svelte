@@ -6,11 +6,11 @@
 <section-svlt id="skills-section">
 	<h1>{getTranslationsFn('Skills', $langStore)}</h1>
 	<br />
-	<h2>{getTranslationsFn("My main skill is that I find solutions to problems very quickly", $langStore)}</h2>
+	<h2>{getTranslationsFn("My main skill is that I find solutions to problems very quickly.", $langStore)}</h2>
 	<br />
-	<h3>{getTranslationsFn("For frameworks, I don't mind which one as long that it gets the job done", $langStore)}</h3>
+	<h3>{getTranslationsFn("For frameworks, I don't mind which one as long that it gets the job done.", $langStore)}</h3>
 	<br />
-	<p>{getTranslationsFn("I mainly program with the Svelte framework and Typescript", $langStore)}</p>
+	<p>{getTranslationsFn("I mainly program with the Svelte framework and Typescript.", $langStore)}</p>
 	<br />
 	<p>{getTranslationsFn("But I have used in the past these technologies for fairly big projects:", $langStore)}</p>
 	<br />
@@ -31,19 +31,23 @@
 <style lang="scss">
 	section-svlt {
 		display: block;
-		text-align: center;
+		text-align: left;
 		padding: 5rem;
 		max-width: 800px;
 		margin: 5rem auto;
 
-		// margin-bottom: 5rem;
 		border-radius: 20px;
 
 		backdrop-filter: blur(5px);
 		background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
 	}
 
+	h1{
+		text-align: center;
+	}
+
 	li {
 		list-style: none;
+		text-align: center;
 	}
 </style>

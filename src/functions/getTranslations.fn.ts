@@ -77,14 +77,14 @@ const full = {
 		{
 			fr: "J'ai beaucoup d'autres projets sur mon ordinateur... Mais ce sont principalement des scripts qui peuvent effectuer des tâches compliquées et ce sont des projets plus personnels que prêts à être publiés."
 		},
-	'My main skill is that I find solutions to problems very quickly': {
-		fr: 'Ma principale compétence est de trouver très rapidement des solutions aux problèmes'
+	'My main skill is that I find solutions to problems very quickly.': {
+		fr: 'Ma principale compétence est de trouver très rapidement des solutions aux problèmes.'
 	},
-	"For frameworks, I don't mind which one as long that it gets the job done": {
-		fr: 'Pour les frameworks, peu importe lesquels tant qu’ils font le travail'
+	"For frameworks, I don't mind which one as long that it gets the job done.": {
+		fr: 'Pour les frameworks, peu importe lesquels tant qu’ils font le travail.'
 	},
-	'I mainly program with the Svelte framework and Typescript': {
-		fr: 'Je programme principalement avec Svelte et Typescript'
+	'I mainly program with the Svelte framework and Typescript.': {
+		fr: 'Je programme principalement avec Svelte et Typescript.'
 	},
 	'But I have used in the past these technologies for fairly big projects:': {
 		fr: 'Mais j’ai utilisé par le passé ces technologies pour des projets assez importants :'
@@ -99,9 +99,9 @@ const full = {
 	"Turns out that the bank branch works with COBOL... So they teached me COBOL in like a week and that's about it really.": {
 		fr: 'Il s’avère que la succursale bancaire travaille avec COBOL… Ils m’ont donc appris COBOL en une semaine et c’est à peu près tout en réalité.'
 	},
-	'It is extremely expensive to run a program to the Main Frame so most of the programs I wrote had to be checked by someone.':
+	'It is extremely expensive to run a program in the mainframe so most of the programs I wrote had to be checked by someone.':
 		{
-			fr: "C'est extrêmement coûteux d’exécuter un programme sur un Main Frame, donc la plupart des programmes que j’ai écrits devaient être vérifiés par quelqu’un."
+			fr: "C'est extrêmement coûteux d’exécuter un programme sur un mainframe, donc la plupart des programmes que j’ai écrits devaient être vérifiés par quelqu’un."
 		},
 	'At the end of the internship and after that pretty bad taste, I decided to create a massive app and make money from it, but it is not really worth the effort and I would rather work in a company with people.':
 		{
