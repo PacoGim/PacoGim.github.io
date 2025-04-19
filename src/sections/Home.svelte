@@ -8,7 +8,7 @@
 	let timeoutDebounce = undefined
 
 	function copyEmailToClipboard() {
-		navigator.clipboard.writeText('PacoGimDev@gmail.com').then(() => {
+		navigator.clipboard.writeText('PacoGim.pro@pm.me').then(() => {
 			copyNotificationElement.style.transform = 'translateY(-30px)'
 
 			clearTimeout(timeoutDebounce)
@@ -38,12 +38,12 @@
 
 		<email-container>
 			{#if $currentScreenSize !== 'small'}
-				<a class="email" href="mailto:PacoGimDev@gmail.com"
-					><MailIcon style="fill: #fff;margin-right: .5rem;" /> PacoGimDev@gmail.com</a
+				<a class="email" href="mailto:PacoGim.pro@pm.me"
+					><MailIcon style="fill: #fff;margin-right: .5rem;" /> PacoGim.pro@pm.me</a
 				>
 			{:else}
 				<button class="nostyle email" on:click={selectText}
-					><MailIcon style="fill: #fff;margin-right: .5rem;" /> <input value="PacoGimDev@gmail.com" readonly /></button
+					><MailIcon style="fill: #fff;margin-right: .5rem;" /> <input value="PacoGim.pro@pm.me" readonly /></button
 				>
 			{/if}
 
@@ -55,7 +55,7 @@
 	</description-container>
 
 	<photo-container>
-		<img src="./img/my_face.webp" alt="" />
+		<img src="./img/happy_face.webp" alt="" />
 	</photo-container>
 </section-svlt>
 
