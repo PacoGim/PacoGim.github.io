@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	letter-spacing: 0.5px;
+}
+
+body {
+	background-color: #0f103f;
+	color: #fff;
+	font-family: Quicksand;
+	font-variation-settings: 'wght' 400;
+	overflow-x: hidden;
+}
+
+button.nostyle {
+	color: inherit;
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+input {
+	outline: none;
+}
+
+h1 {
+	font-size: 2rem;
+	font-variation-settings: 'wght' 650;
+}
+
+h2 {
+	font-size: 1.25rem;
+	font-variation-settings: 'wght' 550;
+}
+
+html[screen-size='small'] {
+	h1 {
+		font-size: 1.25rem;
+	}
+
+	h2 {
+		font-size: 1.1rem;
+	}
+
+	p {
+		font-size: 0.95rem;
+	}
+
+	section-svlt {
+		border-radius: 0;
+	}
+}
