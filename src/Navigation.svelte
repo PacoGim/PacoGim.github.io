@@ -29,8 +29,8 @@
 		<a href="#/" onclick={() => (isActive = false)}>{getTranslationsFn('Home', $langStore)}</a>
 		<a href="#bio-section" onclick={() => (isActive = false)}>{getTranslationsFn('Bio', $langStore)}</a>
 		<a href="#projects-section" onclick={() => (isActive = false)}>{getTranslationsFn('Projects', $langStore)}</a>
-		<a href="#skills-section">{getTranslationsFn('Skills', $langStore)}</a>
 		<a href="#experience-section">{getTranslationsFn('Experience', $langStore)}</a>
+		<a href="#skills-section">{getTranslationsFn('Skills', $langStore)}</a>
 		{#if $currentScreenSize !== 'small'}
 			<lang-change>
 				<button class="nostyle" class:selected={$langStore === 'en'} onclick={() => ($langStore = 'en')}>English</button>

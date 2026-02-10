@@ -60,15 +60,6 @@
 </section-svlt>
 
 <style lang="scss">
-	section-svlt {
-		display: flex;
-
-		margin: 0 auto;
-		max-width: 1000px;
-		// grid-template-columns: 400px auto;
-		padding: 4rem;
-	}
-
 	description-container {
 		width: 400px;
 	}
@@ -152,8 +143,8 @@
 		width: 100%;
 		display: flex;
 		place-self: center;
-		height: 300px;
-		width: 300px;
+		height: 200px;
+		width: 200px;
 		border-radius: 100vmax;
 		border: 4px solid #fff;
 

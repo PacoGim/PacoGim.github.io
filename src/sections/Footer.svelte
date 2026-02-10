@@ -4,21 +4,20 @@
 	import { langStore } from '../store'
 </script>
 
-<section-svlt id="footer-section">
+<footer-svlt id="footer-section">
 	<my-logo>
 		<GoldText text="PG" style="font-size: 2rem;max-height: 36px;" />
 	</my-logo>
 
-		<span>{getTranslationsFn("Designed by Paco Gimeno", $langStore)}</span>
+	<span>{getTranslationsFn('Designed by Paco Gimeno', $langStore)}</span>
 	<contact>
 		<a href="https://github.com/PacoGim" target="_blank"><img src="./img/github_logo.svg" alt="" /></a>
-		<a href="https://www.linkedin.com/in/paco-gimeno-958a53283/" target="_blank"><img src="./img/linkedin_logo.svg" alt="" /></a
-		>
+		<a href="https://www.linkedin.com/in/paco-gimeno/" target="_blank"><img src="./img/linkedin_logo.svg" alt="" /></a>
 	</contact>
-</section-svlt>
+</footer-svlt>
 
 <style lang="scss">
-	section-svlt {
+	footer-svlt {
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -44,10 +43,9 @@
 		margin-right: 0.5rem;
 	}
 
-	:global(html[screen-size='small']){
-
-		my-logo{
-			display: none;
-		}
-	}
+	// :global(html[screen-size='small']) {
+	// 	my-logo {
+	// 		display: none;
+	// 	}
+	// }
 </style>

@@ -50,16 +50,6 @@
 </section-svlt>
 
 <style lang="scss">
-	section-svlt {
-		margin-top: 5rem;
-		display: flex;
-		width: 100%;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
-		padding: 5rem;
-	}
-
 	a {
 		font-size: 2rem;
 		font-variation-settings: 'wght' 700;

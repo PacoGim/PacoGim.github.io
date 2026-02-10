@@ -38,29 +38,34 @@ const full = {
 	'Hello!': {
 		fr: 'Bonjour!'
 	},
-	'I’m pleased to see that I may have piqued your interest and for that I’m already glad.': {
-		fr: "Je suis ravi d'avoir réussi à susciter votre intérêt et pour cela je suis déjà content."
-	},
-	'Born in France in 1992, I quickly learned to use computers. High School bored me to death so I finished all the mandatory studies, moved to Spain then jumped right away in Programming studies since I new that this was my vocation.':
+	'I’m Paco Gimeno, a Full Stack Engineer based in Paris with a strong product mindset and a passion for building production-ready applications.':
 		{
-			fr: 'Né en France en 1992, j’ai rapidement appris à utiliser les ordinateurs. Le lycée m’ennuyait à mourir, alors j’ai terminé toutes les études obligatoires, déménagé en Espagne puis je me suis immédiatement lancé dans des études de programmation car je savais que c’était ma vocation.'
+			fr: 'Je suis Paco Gimeno, ingénieur Full Stack basé à Paris, avec un fort esprit produit et une passion pour la création d’applications prêtes pour la production.'
 		},
-	'I managed to surpass my expectations and ended up with the best grades while also helping my other classmates.': {
-		fr: 'J’ai réussi à dépasser mes attentes et j’ai fini avec les meilleures notes tout en aidant aussi mes autres camarades de classe.'
-	},
-	'For my last year of schooling, I managed to get a place at the multinational INDRA as an intern but more about that in the Experience section.':
+	'Originally from France, I pursued my early programming studies in Spain before returning to Paris to continue my engineering journey. This international path shaped my adaptability and fluency in French, English, and Spanish.':
 		{
-			fr: 'Pour ma dernière année d’études, j’ai réussi à obtenir une place à la multinational INDRA en tant que stagiaire, mais il y aura plus à ce sujet dans la section Expérience.'
+			fr: 'Originaire de France, j’ai commencé mes études de programmation en Espagne avant de revenir à Paris pour poursuivre mon parcours d’ingénieur. Ce parcours international a renforcé mon adaptabilité et ma maîtrise du français, de l’anglais et de l’espagnol.'
 		},
-	"Now I'm a full stack engineer with ": {
-		fr: 'Maintenant, je suis un ingénieur full stack avec '
-	},
-	' years of experience and I’m back in France looking for a job.': {
-		fr: ' ans d’expérience et je suis de retour en France à la recherche d’un emploi.'
-	},
-	'I’m cheerful, kindhearted, lifelong learner, perfectionist and magnanimous.': {
-		fr: 'Je suis joyeux, bienveillant, apprenant à vie, perfectionniste et magnanime.'
-	},
+	'I combine low-level systems programming with full-stack development. Early in my career, I interned at INDRA working on banking systems running on COBOL mainframes, where I learned discipline, precision, and working in high-stakes environments.':
+		{
+			fr: 'Je combine la programmation bas-niveau avec le développement full-stack. Au début de ma carrière, j’ai effectué un stage chez INDRA sur des systèmes bancaires fonctionnant sur des mainframes COBOL, où j’ai appris la discipline, la précision et à travailler dans des environnements à haute responsabilité.'
+		},
+	'I then joined 42 Paris, a highly selective, project-based software engineering school focused on autonomy and peer-driven learning. There, I built projects ranging from low-level C libraries and Unix shells to multithreaded programs, raycasting engines, Dockerized infrastructures, and full-stack web applications.':
+		{
+			fr: 'J’ai ensuite rejoint 42 Paris, une école d’ingénierie logicielle très sélective et basée sur des projets, axée sur l’autonomie et l’apprentissage entre pairs. J’y ai réalisé des projets allant de bibliothèques C et shells Unix à des programmes multithread, moteurs de raycasting, infrastructures Dockerisées et applications web full-stack.'
+		},
+	'For the past three years, I have been independently developing Jahmin, a high-performance desktop music application capable of handling 70k+ tracks efficiently. This long-term project demonstrates my ability to design scalable systems, optimize performance, and ship maintainable software.':
+		{
+			fr: 'Depuis trois ans, je développe de manière indépendante Jahmin, une application musicale de bureau haute performance capable de gérer plus de 70 000 titres efficacement. Ce projet à long terme démontre ma capacité à concevoir des systèmes scalables, optimiser les performances et livrer un logiciel maintenable.'
+		},
+	'I primarily work with Svelte, TypeScript, Node.js, and Electron, leveraging my system-level background to build clean, efficient, and pragmatic solutions across frontend, backend, and infrastructure.':
+		{
+			fr: 'Je travaille principalement avec Svelte, TypeScript, Node.js et Electron, en tirant parti de mes compétences bas-niveau pour créer des solutions propres, efficaces et pragmatiques sur le frontend, le backend et l’infrastructure.'
+		},
+	'I’m looking for an opportunity to contribute to ambitious products, tackle challenging engineering problems, and collaborate with strong technical teams.':
+		{
+			fr: 'Je cherche une opportunité pour contribuer à des produits ambitieux, relever des défis techniques complexes et collaborer avec des équipes techniques de haut niveau.'
+		},
 	'I speak french, english and spanish.': {
 		fr: 'Je parle français, anglais et espagnol.'
 	},
@@ -99,10 +104,9 @@ const full = {
 	"Turns out that the bank branch works with COBOL... So they teached me COBOL in like a week and that's about it really.": {
 		fr: 'Il s’avère que la succursale bancaire travaille avec COBOL… Ils m’ont donc appris COBOL en une semaine et c’est à peu près tout en réalité.'
 	},
-	'It is extremely expensive to run a program in the mainframe so most of the programs I wrote had to be checked by someone.':
-		{
-			fr: "C'est extrêmement coûteux d’exécuter un programme sur un mainframe, donc la plupart des programmes que j’ai écrits devaient être vérifiés par quelqu’un."
-		},
+	'It is extremely expensive to run a program in the mainframe so most of the programs I wrote had to be checked by someone.': {
+		fr: "C'est extrêmement coûteux d’exécuter un programme sur un mainframe, donc la plupart des programmes que j’ai écrits devaient être vérifiés par quelqu’un."
+	},
 	'At the end of the internship and after that pretty bad taste, I decided to create a massive app and make money from it, but it is not really worth the effort and I would rather work in a company with people.':
 		{
 			fr: 'À la fin du stage et après ce mauvais goût, j’ai décidé de créer une application massive et de gagner de l’argent avec, mais cela ne vaut pas vraiment l’effort et je préférerais travailler dans une entreprise avec des gens.'

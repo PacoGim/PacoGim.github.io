@@ -23,13 +23,13 @@
 	<Home />
 	<Bio />
 	<Projects />
-	<Skills />
 	<Experience />
+	<Skills />
 	<Footer />
 	<go-up-container>
 		<button
 			class="nostyle"
-			on:click={() => document.querySelector('body').scrollIntoView({ block: 'start', behavior: 'smooth' })}
+			onclick={() => document.querySelector('body').scrollIntoView({ block: 'start', behavior: 'smooth' })}
 		>
 			{getTranslationsFn('Go back up', $langStore)}
 		</button>
@@ -39,7 +39,6 @@
 <style>
 	main {
 		position: relative;
-
 		padding-bottom: 10rem;
 	}
 
