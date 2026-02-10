@@ -32,6 +32,10 @@
 </script>
 
 <section-svlt id="home-section">
+	<photo-container>
+		<img src="./img/happy_face.webp" alt="" />
+	</photo-container>
+	
 	<description-container>
 		<h1>{getTranslationsFn('Hi, I am Paco Gimeno a Full Stack Engineer based in Paris.', $langStore)}</h1>
 		<h2>{getTranslationsFn('I make ideas become a reality from start to deployment', $langStore)}</h2>
@@ -53,10 +57,6 @@
 			</copy-email-container>
 		</email-container>
 	</description-container>
-
-	<photo-container>
-		<img src="./img/happy_face.webp" alt="" />
-	</photo-container>
 </section-svlt>
 
 <style lang="scss">
@@ -67,7 +67,6 @@
 	description-container h1 {
 		font-variation-settings: 'wght' 700;
 		margin-bottom: 1.5rem;
-		text-align: left;
 	}
 
 	description-container h2 {
@@ -150,6 +149,7 @@
 
 		margin: 0 auto;
 
+		margin-bottom: 2.5rem;
 		box-shadow: 0px 0px 50px 10px #2954a3; /* x | y | blur | spread | color */
 	}
 
@@ -160,44 +160,44 @@
 		border-radius: 100vmax;
 	}
 
-	:global(html[screen-size='medium']),
-	:global(html[screen-size='small']) {
-		section-svlt {
-			flex-direction: column-reverse;
-			align-items: center;
-		}
+	// :global(html[screen-size='medium']),
+	// :global(html[screen-size='small']) {
+	// 	section-svlt {
+	// 		flex-direction: column-reverse;
+	// 		align-items: center;
+	// 	}
 
-		photo-container {
-			margin-bottom: 1.5rem;
-		}
-	}
+	// 	photo-container {
+	// 		margin-bottom: 1.5rem;
+	// 	}
+	// }
 
-	:global(html[screen-size='small']) {
-		section-svlt {
-			padding: 5rem 1rem;
-			text-align: center;
-			word-wrap: break-word;
-		}
+	// :global(html[screen-size='small']) {
+	// 	section-svlt {
+	// 		padding: 5rem 1rem;
+	// 		text-align: center;
+	// 		word-wrap: break-word;
+	// 	}
 
-		description-container {
-			width: 100%;
-		}
+	// 	description-container {
+	// 		width: 100%;
+	// 	}
 
-		copy-email-container {
-			display: none;
-		}
+	// 	copy-email-container {
+	// 		display: none;
+	// 	}
 
-		email-container {
-			justify-content: center;
-		}
+	// 	email-container {
+	// 		justify-content: center;
+	// 	}
 
-		email-container a {
-			margin-right: 0;
-		}
+	// 	email-container a {
+	// 		margin-right: 0;
+	// 	}
 
-		photo-container {
-			width: 200px;
-			height: 200px;
-		}
-	}
+	// 	photo-container {
+	// 		width: 200px;
+	// 		height: 200px;
+	// 	}
+	// }
 </style>
