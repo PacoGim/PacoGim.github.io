@@ -12,11 +12,7 @@
 	<a href="https://github.com/PacoGim/Jahmin" target="_blank">Jahmin <img src="./img/github_logo.svg" alt="" /></a>
 	<project-container>
 		<project-image>
-			<img
-				style="display: {hqImageLoaded === false ? 'initial' : 'none'};"
-				src="./img/jahmin_screenshot_lq.webp"
-				alt=""
-			/>
+			<img style="display: {hqImageLoaded === false ? 'initial' : 'none'};" src="./img/jahmin_screenshot_lq.webp" alt="" />
 
 			<img
 				style="display: {hqImageLoaded === true ? 'initial' : 'none'};"
@@ -45,6 +41,37 @@
 					$langStore
 				)}
 			</h3>
+		</project-description>
+	</project-container>
+</section-svlt>
+
+<section-svlt id="projects-section">
+	<project-logo>
+		<img src="https://raw.githubusercontent.com/ayogun/42-project-badges/refs/heads/main/badges/ft_transcendencem.png" alt="" />
+	</project-logo>
+	<a href="https://github.com/PacoGim/transcendence_42" target="_blank"
+		>transcendence<img src="./img/github_logo.svg" alt="" /></a
+	>
+	<project-container>
+		<project-image>
+			<video src="https://github.com/PacoGim/transcendence_42/raw/refs/heads/main/assets/demo.mp4" controls></video>
+		</project-image>
+
+		<project-description>
+			<h2>{getTranslationsFn("Transcendence – Real-Time Multiplayer Web App", $langStore)}</h2>
+			<p>
+				{getTranslationsFn(
+					"Transcendence is a real-time multiplayer web application built as part of School 42, showcasing full-stack development, microservices, and modern DevOps practices. I designed a scalable microservices architecture using Docker and Docker Compose, with persistent storage and seamless service communication over custom networks.",
+					$langStore
+				)}
+			</p>
+			<br />
+			<p>{getTranslationsFn("The backend leverages Node.js, TypeScript, Fastify, and Bun, with secure authentication via JWT/JWS/JWE and password hashing using bcrypt. Data is managed through SQLite3, while WebSockets enable smooth real-time interactions. The frontend features a custom SPA/SRR built with Tailwind CSS, including keyboard arrow navigation for a responsive user experience.", $langStore)}</p>
+			<br />
+			<p>{getTranslationsFn("Additional features include file uploads, automated email notifications, and robust monitoring with Grafana, Prometheus, Thanos, and the ELK Stack. The project demonstrates a complete end-to-end workflow—from development and deployment to real-time interaction—highlighting my skills in web development, DevOps, and system design.", $langStore)}</p>
+			<br />
+			<p>{getTranslationsFn('Click on the Github logo above if you want to know more!', $langStore)}</p>
+			<br />
 		</project-description>
 	</project-container>
 </section-svlt>
@@ -82,7 +109,7 @@
 
 	project-logo img {
 		height: 100%;
-		width: 100%;
+		width: auto;
 		padding-top: 1rem;
 	}
 
@@ -97,9 +124,15 @@
 		font-variation-settings: 'wght' 600;
 	}
 
-	project-image img {
+	project-image img,
+	project-image video {
 		width: 100%;
 		height: 100%;
+	}
+
+	project-image video {
+		border-radius: 25px;
+		margin-bottom: 2rem;
 	}
 
 	project-description {
