@@ -128,6 +128,7 @@
 	project-image video {
 		width: 100%;
 		height: 100%;
+		// margin-top: 1rem;
 	}
 
 	project-image video {
@@ -145,21 +146,21 @@
 		background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
 	}
 
-	:global(html[screen-size='medium']),
-	:global(html[screen-size='small']) {
-		project-image {
-			height: initial;
-		}
-	}
+	// :global(html[screen-size='medium']),
+	// :global(html[screen-size='small']) {
+	// 	project-image {
+	// 		height: initial;
+	// 	}
+	// }
 
-	:global(html[screen-size='small']) {
-		section-svlt {
-			padding: 0;
-		}
+	// :global(html[screen-size='small']) {
+	// 	section-svlt {
+	// 		padding: 0;
+	// 	}
 
-		project-description {
-			width: 100%;
-			border-radius: 0;
-		}
-	}
+	// 	project-description {
+	// 		width: 100%;
+	// 		border-radius: 0;
+	// 	}
+	// }
 </style>
